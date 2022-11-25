@@ -1,0 +1,5396 @@
+%TransitRealtime.FeedMessage{
+  header: %TransitRealtime.FeedHeader{
+    gtfs_realtime_version: "1.0",
+    incrementality: :FULL_DATASET,
+    timestamp: 1669419992,
+    __pb_extensions__: %{},
+    __unknown_fields__: [
+      {1001, 2,
+       <<10, 3, 49, 46, 48, 18, 11, 10, 1, 66, 18, 6, 16, 224, 181, 133, 156, 6,
+         18, 11, 10, 1, 68, 18, 6, 16, 224, 181, 133, 156, 6, 18, 11, 10, 1, 70,
+         18, 6, 16, 224, ...>>}
+    ]
+  },
+  entity: [
+    %TransitRealtime.FeedEntity{
+      id: "000001B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "104050_B..N",
+          start_time: "17:20:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 49, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419979,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419979,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D08N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D07N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420098,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420098,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D06N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420188,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420188,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D05N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420278,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420278,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D04N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420398,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420398,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D03N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 77, 18, 2, 67, 77>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000002B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "104050_B..N",
+          start_time: "17:20:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 49, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 32,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D07N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000003B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "104873_B..N",
+          start_time: "17:28:44",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 50, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D10N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420066,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420066,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D09N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420186,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420186,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D08N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420276,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420276,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D07N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420366,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420366,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D06N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420456,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420456,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D05N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420546,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420546,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D04N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420666,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420666,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D03N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 77, 18, 2, 67, 77>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000004B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "104873_B..N",
+          start_time: "17:28:44",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 50, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 29,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D10N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000005B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "105750_B..S",
+          start_time: "17:37:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 51, 55, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, 24, 3>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420104,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420104,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420344,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420344,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D35S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420704,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420704,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D39S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420884,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420884,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D40S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000006B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "105750_B..S",
+          start_time: "17:37:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 51, 55, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, 24, 3>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 32,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419976,
+        congestion_level: nil,
+        stop_id: "D28S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000007B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "105850_B..N",
+          start_time: "17:38:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 51, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D12N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D11N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420197,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420197,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D10N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420317,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420317,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D09N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D08N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420527,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420527,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D07N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420617,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420617,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D06N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420707,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420707,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D05N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420797,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420797,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D04N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420917,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420917,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D03N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 77, 18, 2, 67, 77>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000008B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "105850_B..N",
+          start_time: "17:38:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 51, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, 1>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 27,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D12N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000009B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "106650_B..S",
+          start_time: "17:46:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 52, 55, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, 24, 3>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420167,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420167,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D26S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420707,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420707,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420947,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420947,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D35S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421292,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421292,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D39S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421457,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421457,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D40S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000010B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "106650_B..S",
+          start_time: "17:46:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 52, 55, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, 24, 3>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 28,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "R30S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000011B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "107550_B..S",
+          start_time: "17:55:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 53, 54, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, 24, 3>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420206,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420206,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420326,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420326,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420446,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420446,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420716,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420716,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D26S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420836,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420836,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420986,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420986,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421226,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421226,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D35S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421571,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421571,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D39S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421736,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421736,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D40S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000012B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "107550_B..S",
+          start_time: "17:55:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 55, 53, 54, 32, 66, 80, 75, 47, 66, 66,
+               67, 16, 1, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 27,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419871,
+        congestion_level: nil,
+        stop_id: "D22S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000013B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "106850_B..N",
+          start_time: "17:48:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 52, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, 75, 16, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A19N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419976,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A18N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A17N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A16N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420227,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420227,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A15N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420347,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420347,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A14N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420437,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D13N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420527,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420527,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D12N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420617,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420617,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D11N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420767,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420767,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D10N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420887,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420887,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D09N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421007,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421007,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D08N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, 67, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421097,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421097,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D07N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421187,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421187,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D06N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421277,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421277,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D05N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 50, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421367,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421367,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D04N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421487,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421487,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D03N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000014B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "106850_B..N",
+          start_time: "17:48:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 16, 49, 66, 32, 49, 55, 52, 56, 43, 32, 66, 66, 67, 47, 66,
+               80, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 21,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419976,
+        congestion_level: nil,
+        stop_id: "A18N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000015B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108300_B..N",
+          start_time: "18:03:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 56, 48, 51, 32, 66, 66, 67, 47, 49, 52,
+               53, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A24N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A22N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A21N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420227,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420227,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A20N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420317,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420317,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A19N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420407,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420407,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A18N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420467,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420467,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A17N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A16N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420647,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420647,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A15N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, 50>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420767,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420767,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A14N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 50, 18, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420887,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420887,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D13N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 77, 18, 2, ...>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000016B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108300_B..N",
+          start_time: "18:03:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 56, 48, 51, 32, 66, 66, 67, 47, 49, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 16,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "A24N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000017B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108150_B..S",
+          start_time: "18:01:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 69, 66, 32, 49, 56, 48, 49, 32, 66, 80, 75, 47, 66, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420109,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420109,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D20S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420229,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420229,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420349,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420349,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420665,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420665,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D23S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420829,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420829,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420965,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420965,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421109,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421109,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421319,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421319,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D26S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421433,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421433,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421589,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421589,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421829,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421829,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D35S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422129,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422129,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D39S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422249,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422249,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D40S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000018B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108150_B..S",
+          start_time: "18:01:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 69, 66, 32, 49, 56, 48, 49, 32, 66, 80, 75, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 25,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D17S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000019B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108700_B..S",
+          start_time: "18:07:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2,
+             <<10, 15, 49, 66, 32, 49, 56, 48, 54, 32, 66, 80, 75, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D14S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420070,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420070,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D15S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420160,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420160,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D16S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420280,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420280,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420460,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420460,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D20S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, 51>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420580,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420580,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, 66, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420700,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420700,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421180,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421180,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421270,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421270,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 51, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421420,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421420,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421660,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421660,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D26S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421780,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421780,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421930,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421930,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422170,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422170,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D35S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422515,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422515,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D39S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422680,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422680,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D40S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000020B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "108700_B..S",
+          start_time: "18:07:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2, <<10, 15, 49, 66, 32, 49, 56, 48, 54, 32, 66, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 21,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D14S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000021B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "109800_B..N",
+          start_time: "18:18:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2, <<10, 15, 49, 66, 32, 49, 56, 49, 56, 32, 66, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420157,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420157,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D22N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, 2, 66, 52>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420277,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420277,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D21N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, 2, 66, 52>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420397,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420397,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D20N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, 2, 66, 52>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420577,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420577,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D17N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, 2, 66, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420667,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420667,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D16N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420757,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420757,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D15N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420847,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420847,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D14N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 52, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420967,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420967,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A24N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421057,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421057,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A22N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421147,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421147,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A21N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421237,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421237,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A20N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421327,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421327,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A19N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421417,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421417,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A18N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421477,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421477,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A17N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421567,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421567,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "A16N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421657,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421657,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "A15N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421747,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421747,
+              ...
+            },
+            stop_id: "A14N",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421867,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D13N",
+            ...
+          }
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000022B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "109800_B..N",
+          start_time: "18:18:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2, <<10, 15, 49, 66, 32, 49, 56, 49, 56, ...>>}
+          ]
+        },
+        position: nil,
+        current_stop_sequence: 8,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419711,
+        congestion_level: nil,
+        stop_id: "R30N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000023B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "109550_B..S",
+          start_time: "18:15:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [
+            {1001, 2, <<10, 16, 49, 66, 32, 49, 56, 49, 54, ...>>}
+          ]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, 18, 2, 65, 49>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, 18, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420137,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420257,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420257,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D14S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420377,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420377,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D15S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, 51, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420467,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420467,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D16S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 66, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420737,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420737,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D20S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420857,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420857,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420977,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420977,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421487,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421487,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421577,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421577,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421727,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421727,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D25S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421967,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421967,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "D26S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422087,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422087,
+              ...
+            },
+            stop_id: "D28S",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669422237,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D31S",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...}
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000024B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "109550_B..S",
+          start_time: "18:15:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 16, 49, 66, 32, 49, 56, ...>>}]
+        },
+        position: nil,
+        current_stop_sequence: 18,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "A21S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000025B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110200_B..S",
+          start_time: "18:22:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 15, 69, 66, 32, 49, 56, ...>>}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A16S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, 18, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, 18, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420125,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420125,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A18S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, 49, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420209,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420209,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A19S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420299,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420299,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A20S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420377,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420377,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420473,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420473,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420563,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420563,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A24S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420674,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420674,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D14S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420758,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420758,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D15S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420848,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420848,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D16S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420938,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420938,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "D17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421118,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421118,
+              ...
+            },
+            stop_id: "D20S",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421238,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D21S",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000026B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110200_B..S",
+          start_time: "18:22:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 15, 69, 66, 32, ...>>}]
+        },
+        position: nil,
+        current_stop_sequence: 14,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "A16S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000027B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110800_B..S",
+          start_time: "18:28:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 15, 49, 66, 32, ...>>}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D13S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 67, 49, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420086,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420086,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A14S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, 65, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420176,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420176,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A15S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420266,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420266,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A16S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420356,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420356,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A17S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420416,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420416,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A18S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420506,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420506,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A19S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420596,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420596,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "A20S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420686,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420686,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "A21S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420776,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420776,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "A22S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420866,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420866,
+              ...
+            },
+            stop_id: "A24S",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420986,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D14S",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000028B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110800_B..S",
+          start_time: "18:28:00",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 15, 49, ...>>}]
+        },
+        position: nil,
+        current_stop_sequence: 10,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D13S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000029B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110913_B..N",
+          start_time: "18:29:08",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, 15, 49, ...>>}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, 2, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420098,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420098,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D24N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<10, ...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420188,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420188,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "R30N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420668,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420668,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D22N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420788,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420788,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D21N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420908,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420908,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D20N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421088,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421088,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D17N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421178,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421178,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "D16N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421268,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421268,
+              ...
+            },
+            stop_id: "D15N",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421358,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D14N",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000030B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "110913_B..N",
+          start_time: "18:29:08",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, ...>>}]
+        },
+        position: nil,
+        current_stop_sequence: 6,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D25N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000031B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "111808_B..N",
+          start_time: "18:38:05",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, <<10, ...>>}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420064,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420064,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D31N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, <<...>>}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420214,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420214,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D28N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, 2, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420334,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420334,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D26N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420574,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420574,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D25N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420694,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420694,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D24N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420784,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420784,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "R30N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421264,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421264,
+              ...
+            },
+            stop_id: "D22N",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669421384,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D21N",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000032B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "111808_B..N",
+          start_time: "18:38:05",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, ...}]
+        },
+        position: nil,
+        current_stop_sequence: 2,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419916,
+        congestion_level: nil,
+        stop_id: "D35N",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000033B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "111705_B..S",
+          start_time: "18:37:03",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{1001, 2, ...}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419981,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D09S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{1001, ...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420086,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420086,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            stop_id: "D10S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [{...}]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420236,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420236,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D11S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420326,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420326,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "D12S",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420416,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420416,
+              ...
+            },
+            stop_id: "D13S",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420536,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "A14S",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000034B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "111705_B..S",
+          start_time: "18:37:03",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{...}]
+        },
+        position: nil,
+        current_stop_sequence: 6,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419981,
+        congestion_level: nil,
+        stop_id: "D09S",
+        vehicle: nil,
+        occupancy_status: nil,
+        __pb_extensions__: %{},
+        ...
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000035B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "112515_B..N",
+          start_time: "18:45:09",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          __unknown_fields__: [{...}]
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419966,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              __unknown_fields__: []
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669419966,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            stop_id: "D40N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            __unknown_fields__: [...]
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              __pb_extensions__: %{},
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420047,
+              uncertainty: nil,
+              ...
+            },
+            stop_id: "D39N",
+            schedule_relationship: :SCHEDULED,
+            __pb_extensions__: %{},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420287,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420287,
+              ...
+            },
+            stop_id: "D35N",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420557,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D31N",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000036B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "112515_B..N",
+          start_time: "18:45:09",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          ...
+        },
+        position: nil,
+        current_stop_sequence: nil,
+        current_status: :STOPPED_AT,
+        timestamp: 1669419966,
+        congestion_level: nil,
+        stop_id: "D40N",
+        vehicle: nil,
+        ...
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000037B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "113350_B..N",
+          start_time: "18:53:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          direction_id: nil,
+          __pb_extensions__: %{},
+          ...
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420410,
+              uncertainty: nil,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420410,
+              ...
+            },
+            stop_id: "D40N",
+            schedule_relationship: :SCHEDULED,
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              time: 1669420530,
+              ...
+            },
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{
+              delay: nil,
+              ...
+            },
+            stop_id: "D39N",
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        __unknown_fields__: []
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000038B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "113350_B..N",
+          start_time: "18:53:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          ...
+        },
+        position: nil,
+        current_stop_sequence: nil,
+        current_status: :IN_TRANSIT_TO,
+        timestamp: 1669420410,
+        congestion_level: nil,
+        ...
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000039B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "114350_B..N",
+          start_time: "19:03:30",
+          start_date: "20221125",
+          schedule_relationship: nil,
+          route_id: "B",
+          ...
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{delay: nil, ...},
+            departure: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{
+            stop_sequence: nil,
+            arrival: %TransitRealtime.TripUpdate.StopTimeEvent{...},
+            ...
+          },
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        delay: nil,
+        __pb_extensions__: %{},
+        ...
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000040B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "114350_B..N",
+          start_time: "19:03:30",
+          start_date: "20221125",
+          ...
+        },
+        position: nil,
+        current_stop_sequence: nil,
+        current_status: :IN_TRANSIT_TO,
+        ...
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000041B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{
+          trip_id: "115000_B..S",
+          start_time: "19:10:00",
+          start_date: "20221125",
+          ...
+        },
+        stop_time_update: [
+          %TransitRealtime.TripUpdate.StopTimeUpdate{stop_sequence: nil, ...},
+          %TransitRealtime.TripUpdate.StopTimeUpdate{...},
+          ...
+        ],
+        vehicle: nil,
+        timestamp: nil,
+        ...
+      },
+      vehicle: nil,
+      alert: nil,
+      __pb_extensions__: %{},
+      __unknown_fields__: []
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000042B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{
+        trip: %TransitRealtime.TripDescriptor{trip_id: "115000_B..S", ...},
+        position: nil,
+        ...
+      },
+      alert: nil,
+      __pb_extensions__: %{},
+      ...
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000043B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{
+        trip: %TransitRealtime.TripDescriptor{trip_id: "112200_B..S", ...},
+        stop_time_update: [...],
+        ...
+      },
+      vehicle: nil,
+      alert: nil,
+      ...
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000044B",
+      is_deleted: false,
+      trip_update: nil,
+      vehicle: %TransitRealtime.VehiclePosition{...},
+      ...
+    },
+    %TransitRealtime.FeedEntity{
+      id: "000045B",
+      is_deleted: false,
+      trip_update: %TransitRealtime.TripUpdate{...},
+      ...
+    },
+    %TransitRealtime.FeedEntity{id: "000046B", is_deleted: false, ...},
+    %TransitRealtime.FeedEntity{id: "000047B", ...},
+    %TransitRealtime.FeedEntity{...},
+    ...
+  ],
+  __pb_extensions__: %{},
+  __unknown_fields__: []
+}
