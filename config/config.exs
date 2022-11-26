@@ -11,8 +11,8 @@ Application.start(:nerves_bootstrap)
 config :mta_subway_time, target: Mix.target()
 
 config :mta_subway_time, :subway_lines, [
-#  %{line: "F", stop_id: "0", direction: -1},
-  %{line: "ZZZ", stop_id: "0", direction: -1}
+  %{line: "F", stop_id: "0", direction: -1},
+#  %{line: "ZZZ", stop_id: "0", direction: -1}
 ]
 
 config :mta_subway_time, gtfs_api_key: System.get_env("GTFS_API_KEY")

@@ -71,11 +71,15 @@ defmodule MtaSubwayTime.Networking.Api do
   end
 
   def request_mta_info() do
-    Application.get_env(:mta_subway_time, :subway_lines)
+    subway_line_targets()
     |> api_routes
     |> Enum.each(&request_mta_info/1)
 
     {:ok, {}}
+  end
+
+  def subway_line_targets do
+    Application.get_env(:mta_subway_time, :subway_lines)
   end
 
   def lines(subway_lines) do
@@ -132,17 +136,40 @@ defmodule MtaSubwayTime.Networking.Api do
   end
 
   defp handle_mta_response({:ok, %{status_code: 200, body: body}}) do
-#    Logger.error("Loaded MTA info: #{body}!")
+    handle_mta_feed_message(
+      TransitRealtime.FeedMessage.decode(body),
+      subway_line_targets(),
+      :os.system_time(:second),
+      MtaSubwayTime.Networking.Data
+    )
+  end
 
-    TransitRealtime.FeedMessage.decode(body)
-    |> IO.inspect(pretty: true)
+  defp handle_mta_response({:ok, %{status_code: status_code, body: body}}) do
+    Logger.error("Unhandled status code: #{status_code}")
 
     {:ok, {}}
   end
 
   defp handle_mta_response({:error, %HTTPoison.Error{reason: reason}}) do
     Logger.error("Failed to load MTA info: #{reason}!")
+
     {:ok, {}}
+  end
+
+  def handle_mta_feed_message(message, line_targets, epoch_time, data) do
+    {
+      :ok,
+      {
+        line_targets
+        |> Enum.map(
+             fn %{line: line, stop_id: stop_id, direction: direction} ->
+               MtaSubwayTime.Networking.Decoder.subway_line_stops(message, line, stop_id, direction, epoch_time)
+             end
+           )
+        |> Enum.filter(& !Enum.empty?(&1.arrivals))
+        |> Enum.each(& MtaSubwayTime.Networking.Data.put(data, &1.line, &1.stop_id, &1.direction, &1))
+      }
+    }
   end
 
   defp schedule_next_mta_request_loop(duration_seconds) do

@@ -8,10 +8,10 @@ defmodule MtaSubwayTime.Networking.DataTest do
   end
 
   test "stores values by key", %{data: data} do
-    assert MtaSubwayTime.Networking.Data.get(data, "F", -1) == nil
+    assert MtaSubwayTime.Networking.Data.get(data, "F", "0", -1) == nil
 
-    MtaSubwayTime.Networking.Data.put(data, "F", -1, :ok)
+    MtaSubwayTime.Networking.Data.put(data, "F", "0", -1, :ok)
 
-    assert MtaSubwayTime.Networking.Data.get(data, "F", -1) == :ok
+    assert MtaSubwayTime.Networking.Data.get(data, "F", "0", -1) == :ok
   end
 end

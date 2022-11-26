@@ -1,6 +1,12 @@
 defmodule MtaSubwayTime.Networking.ApiTest do
   use ExUnit.Case, async: true
 
+  setup do
+    data = start_supervised!(MtaSubwayTime.Networking.Data)
+
+    %{data: data}
+  end
+
   test "collects unique stop identifiers" do
     subway_lines = [
       %{line: "F", stop_id: "0", direction: -1},
@@ -98,5 +104,62 @@ defmodule MtaSubwayTime.Networking.ApiTest do
         assert match?({:error, nil}, MtaSubwayTime.Networking.Api.api_route(line))
       end
     )
+  end
+
+  test "stores feed message data for line and stop with data", %{data: data} do
+    message = %TransitRealtime.FeedMessage{
+      entity: [
+        %TransitRealtime.FeedEntity{
+          trip_update: %TransitRealtime.TripUpdate{
+            trip: %TransitRealtime.TripDescriptor{
+              route_id: "A"
+            },
+            stop_time_update: [
+              %TransitRealtime.TripUpdate.StopTimeUpdate{
+                stop_id: "0",
+                arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+                  time: 20
+                }
+              }
+            ]
+          }
+        },
+        %TransitRealtime.FeedEntity{
+          trip_update: %TransitRealtime.TripUpdate{
+            trip: %TransitRealtime.TripDescriptor{
+              route_id: "A"
+            },
+            stop_time_update: [
+              %TransitRealtime.TripUpdate.StopTimeUpdate{
+                stop_id: "0",
+                arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+                  time: 10
+                }
+              },
+              %TransitRealtime.TripUpdate.StopTimeUpdate{
+                stop_id: "0",
+                arrival: %TransitRealtime.TripUpdate.StopTimeEvent{
+                  time: 30
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+
+    subway_lines = [
+      %{line: "A", stop_id: "0", direction: -1}
+    ]
+
+    {:ok, result} = MtaSubwayTime.Networking.Api.handle_mta_feed_message(message, subway_lines, 0, data)
+
+    expected = %MtaSubwayTime.Models.SubwayLineStop{
+      line: "A",
+      stop_id: "0",
+      arrivals: [10, 20, 30]
+    }
+
+    assert MtaSubwayTime.Networking.Data.get(data, "A", "0", -1) == expected
   end
 end
