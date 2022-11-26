@@ -71,15 +71,11 @@ defmodule MtaSubwayTime.Networking.Api do
   end
 
   def request_mta_info() do
-    subway_line_targets()
+    MtaSubwayTime.subway_line_targets()
     |> api_routes
     |> Enum.each(&request_mta_info/1)
 
     {:ok, {}}
-  end
-
-  def subway_line_targets do
-    Application.get_env(:mta_subway_time, :subway_lines)
   end
 
   def lines(subway_lines) do
@@ -138,7 +134,7 @@ defmodule MtaSubwayTime.Networking.Api do
   defp handle_mta_response({:ok, %{status_code: 200, body: body}}) do
     handle_mta_feed_message(
       TransitRealtime.FeedMessage.decode(body),
-      subway_line_targets(),
+      MtaSubwayTime.subway_line_targets(),
       :os.system_time(:second),
       MtaSubwayTime.Networking.Data
     )

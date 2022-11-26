@@ -2,19 +2,18 @@ import Config
 
 # Add configuration that is only needed when running on the host here.
 
-config :mta_subway_time, :viewport, %{
+config :mta_subway_time, :scenic_config, [
   name: :main_viewport,
-  default_scene: {MtaSubwayTime.Scene.Schedule, nil},
   size: {800, 480},
-  opts: [scale: 1.0],
+  default_scene: {MtaSubwayTime.Scene.Schedule, nil},
   drivers: [
-    %{
+  # Uncomment to actually run locally not through Docker
+    [
       module: Scenic.Driver.Local,
-      opts: [title: "MIX_TARGET=host, app = :mta_subway_time"],
-      window: [title: "MTA Subway Time", resizeable: true]
-    }
+      name: :local
+    ]
   ]
-}
+]
 
 config :logger,
        level: :debug

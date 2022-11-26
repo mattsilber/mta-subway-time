@@ -62,11 +62,8 @@ defmodule MtaSubwayTime.MixProject do
       {:nerves_system_grisp2, "~> 0.5", runtime: false, targets: :grisp2},
 
       # Scenic for displaying train schedules
-      {:scenic, "~> 0.10"},
-      {:scenic_sensor, "~> 0.7"},
+      {:scenic, "~> 0.11"},
       {:scenic_driver_local, "~> 0.11", targets: :host},
-      {:scenic_driver_nerves_rpi, "~> 0.10", targets: @all_targets},
-      {:scenic_driver_nerves_touch, "~> 0.10", targets: @all_targets},
 
       # Httpoison for networking
       {:httpoison, "~> 1.8"},

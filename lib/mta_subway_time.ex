@@ -15,4 +15,8 @@ defmodule MtaSubwayTime do
   def hello do
     :world
   end
+
+  def subway_line_targets do
+    Application.get_env(:mta_subway_time, :subway_lines)
+  end
 end

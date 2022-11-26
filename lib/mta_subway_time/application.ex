@@ -17,7 +17,8 @@ defmodule MtaSubwayTime.Application do
         # Starts a worker by calling: MtaSubwayTime.Worker.start_link(arg)
         # {MtaSubwayTime.Worker, arg}
         {MtaSubwayTime.Networking.Data, name: MtaSubwayTime.Networking.Data},
-        {MtaSubwayTime.Networking.Api, name: MtaSubwayTime.Networking.Api}
+        {MtaSubwayTime.Networking.Api, name: MtaSubwayTime.Networking.Api},
+        {Scenic, [scenic_start_config()]},
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)
@@ -45,5 +46,9 @@ defmodule MtaSubwayTime.Application do
 
   def target() do
     Application.get_env(:mta_subway_time, :target)
+  end
+
+  defp scenic_start_config do
+    Application.get_env(:mta_subway_time, :scenic_config)
   end
 end

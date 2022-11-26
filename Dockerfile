@@ -28,7 +28,10 @@ RUN apt-get update \
     libmnl0 \
     libmnl-dev \
     ntp \
-    protobuf-compiler
+    protobuf-compiler \
+#    libgl1-mesa-glx \
+#    xvfb \
+#    freeglut3-dev
 
 # Install fwup (https://github.com/fhunleth/fwup)
 ENV FWUP_VERSION="1.9.1"
