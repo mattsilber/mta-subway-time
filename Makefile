@@ -1,8 +1,13 @@
-MAKEFILE := $(abspath $(lastword $(MAKEFILE_LIST)))
-MAKEFILE_DIR := $(dir $(MAKEFILE))
+include default.mk
 
-docker-build:
-	docker build -t elixir-nerves .
+windows-docker-build:
+	make -f makefile.win docker-build
 
-docker-run:
-	docker run -it -v $(MAKEFILE_DIR):/workspace -w /workspace elixir-nerves
+windows-docker-run:
+	make -f makefile.win docker-run
+
+nix-docker-build:
+	make -f makefile.nix docker-build
+
+nix-docker-run:
+	make -f makefile.nix docker-run
