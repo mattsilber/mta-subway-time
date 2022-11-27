@@ -5,12 +5,16 @@ import Config
 config :mta_subway_time, :scenic_config, [
   name: :main_viewport,
   size: {800, 480},
-  default_scene: {MtaSubwayTime.Scene.Schedule, nil},
+  default_scene: MtaSubwayTime.Scene.Schedule,
   drivers: [
   # Uncomment to actually run locally not through Docker
     [
       module: Scenic.Driver.Local,
-      name: :local
+      name: :local,
+      window: [
+        resizeable: false,
+        title: "MTA Subway Times"
+      ],
     ]
   ]
 ]

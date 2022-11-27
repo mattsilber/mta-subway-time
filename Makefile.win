@@ -2,6 +2,18 @@ include default.mk
 
 MAKEFILE := $(abspath $(lastword $(MAKEFILE_LIST)))
 MAKEFILE_DIR := $(dir $(MAKEFILE))
+HOME := $($(HOMEDRIVE)$(HOMEPATH))
 
 docker-run:
-	docker run -it -v $(MAKEFILE_DIR):/workspace -w /workspace elixir-nerves-mtast
+	docker run --rm -it \
+	    -v $(MAKEFILE_DIR):/workspace \
+	    -w /workspace \
+	    $(IMAGE_NAME)
+
+docker-run-with-x:
+	docker run --rm -it \
+	    -e DISPLAY=$(DISPLAY) \
+	    -v $(MAKEFILE_DIR):/workspace \
+	    -v $(HOME):/tmp/.X11-unix \
+	    -w /workspace \
+	    $(IMAGE_NAME)

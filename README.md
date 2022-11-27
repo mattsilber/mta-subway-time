@@ -30,3 +30,19 @@ To start your Nerves app:
   * Forum: https://elixirforum.com/c/nerves-forum
   * Discussion Slack elixir-lang #nerves ([Invite](https://elixir-slackin.herokuapp.com/))
   * Source: https://github.com/nerves-project/nerves
+
+
+## Windows setup
+
+Follow these [instructions](https://medium.com/@jeffborch/running-the-scenic-elixir-gui-framework-on-windows-10-using-wsl-f9c01fd276f6) for setting up a WSL instance.
+
+Inside the created WSL instance, run `./scripts/wsl_setup.sh` to install everything required to build this project and run with Windows as the GUI host.
+
+WSL won't have permissions to write to the directory, so just adjust the deps and build paths to somewhere mix does have access to, e.g.:
+
+```sh
+MIX_BUILD_PATH=~/build \
+  MIX_DEPS_PATH=~/deps \
+  MIX_TARGET=host \
+  mix run --no-halt
+```

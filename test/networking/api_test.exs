@@ -1,12 +1,6 @@
 defmodule MtaSubwayTime.Networking.ApiTest do
   use ExUnit.Case, async: true
 
-  setup do
-    data = start_supervised!(MtaSubwayTime.Networking.Data)
-
-    %{data: data}
-  end
-
   test "collects unique stop identifiers" do
     subway_lines = [
       %{line: "F", stop_id: "0", direction: -1},
@@ -106,7 +100,7 @@ defmodule MtaSubwayTime.Networking.ApiTest do
     )
   end
 
-  test "stores feed message data for line and stop with data", %{data: data} do
+  test "stores feed message data for line and stop with data" do
     message = %TransitRealtime.FeedMessage{
       entity: [
         %TransitRealtime.FeedEntity{
@@ -152,7 +146,7 @@ defmodule MtaSubwayTime.Networking.ApiTest do
       %{line: "A", stop_id: "0", direction: -1}
     ]
 
-    {:ok, result} = MtaSubwayTime.Networking.Api.handle_mta_feed_message(message, subway_lines, 0, data)
+    {:ok, result} = MtaSubwayTime.Networking.Api.handle_mta_feed_message(message, subway_lines, 0)
 
     expected = %MtaSubwayTime.Models.SubwayLineStop{
       line: "A",
@@ -160,6 +154,6 @@ defmodule MtaSubwayTime.Networking.ApiTest do
       arrivals: [10, 20, 30]
     }
 
-    assert MtaSubwayTime.Networking.Data.get(data, "A", "0", -1) == expected
+    assert MtaSubwayTime.Networking.Data.get("A", "0", -1) == expected
   end
 end

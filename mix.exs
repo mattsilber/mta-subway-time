@@ -13,6 +13,7 @@ defmodule MtaSubwayTime.MixProject do
       archives: [nerves_bootstrap: "~> 1.11"],
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      deps_path: System.get_env("MIX_DEPS_PATH") || "deps",
       releases: [{@app, release()}],
       preferred_cli_target: [run: :host, test: :host]
     ]

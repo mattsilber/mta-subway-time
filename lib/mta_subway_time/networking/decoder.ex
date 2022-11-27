@@ -2,6 +2,7 @@ defmodule MtaSubwayTime.Networking.Decoder do
 
   def subway_line_stops(feed_message, line, stop_id, _direction, epoch_seconds) do
     arrivals = feed_message
+#               |> IO.inspect
                |> filter_entities_for_line(line)
                |> Enum.map(& &1.trip_update.stop_time_update)
                |> Enum.flat_map(& stop_times_after_ascending(&1, stop_id, epoch_seconds))

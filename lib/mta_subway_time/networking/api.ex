@@ -135,8 +135,7 @@ defmodule MtaSubwayTime.Networking.Api do
     handle_mta_feed_message(
       TransitRealtime.FeedMessage.decode(body),
       MtaSubwayTime.subway_line_targets(),
-      :os.system_time(:second),
-      MtaSubwayTime.Networking.Data
+      :os.system_time(:second)
     )
   end
 
@@ -152,7 +151,7 @@ defmodule MtaSubwayTime.Networking.Api do
     {:ok, {}}
   end
 
-  def handle_mta_feed_message(message, line_targets, epoch_time, data) do
+  def handle_mta_feed_message(message, line_targets, epoch_time) do
     {
       :ok,
       {
@@ -163,7 +162,7 @@ defmodule MtaSubwayTime.Networking.Api do
              end
            )
         |> Enum.filter(& !Enum.empty?(&1.arrivals))
-        |> Enum.each(& MtaSubwayTime.Networking.Data.put(data, &1.line, &1.stop_id, &1.direction, &1))
+        |> Enum.each(& MtaSubwayTime.Networking.Data.put(&1.line, &1.stop_id, &1.direction, &1))
       }
     }
   end

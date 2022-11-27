@@ -35,29 +35,31 @@ defmodule MtaSubwayTime.Scene.Schedule do
     {:ok, scene}
   end
 
-  def handle_info(:refresh, state) do
+  @spec handle_info(:refresh, Scenic.Scene) :: {:no_reply, Scenic.Scene}
+  def handle_info(:refresh, scene) do
     Logger.info("Refreshing...")
 
     graph =
-      state.graph
-      |> modify_title(:name_1, state)
+      scene.assigns.graph
+      |> modify_title(:name_1, scene)
 
     state =
-      state
+      scene
       |> assign(graph: graph)
       |> push_graph(graph)
 
-    {:noreply, state}
+    {:noreply, scene}
   end
 
-  defp modify_title(graph, name, %{target_index: target_index}) do
-    target = elem(MtaSubwayTime.subway_line_targets(), target_index)
+  @spec modify_title(Scenic.Graph, atom(), Scenic.Scene) :: Scenic.Graph
+  defp modify_title(graph, name, scene) do
+    target = Enum.at(MtaSubwayTime.subway_line_targets(), scene.assigns.target_index)
 
     Graph.modify(
       graph,
       name,
-      text(
-        graph,
+      &text(
+        &1,
         title(target) |> IO.inspect,
         font_size: 22,
         translate: {10, 14},
@@ -67,11 +69,12 @@ defmodule MtaSubwayTime.Scene.Schedule do
   end
 
   defp title(%{line: line, stop_id: stop_id, direction: direction}) do
-    stop = MtaSubwayTime.Networking.Data.get(MtaSubwayTime.Networking.Data, line, stop_id, direction)
-
-    title(
-      stop
-    )
+    case MtaSubwayTime.Networking.Data.get(line, stop_id, direction) do
+      nil ->
+        "Loading train schedule..."
+      stop ->
+        title(stop)
+    end
   end
 
   @spec title(MtaSubwayTime.Models.SubwayLineStop) :: String

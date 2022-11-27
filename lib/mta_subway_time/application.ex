@@ -16,7 +16,7 @@ defmodule MtaSubwayTime.Application do
         # Children for all targets
         # Starts a worker by calling: MtaSubwayTime.Worker.start_link(arg)
         # {MtaSubwayTime.Worker, arg}
-        {MtaSubwayTime.Networking.Data, name: MtaSubwayTime.Networking.Data},
+        MtaSubwayTime.Networking.Data,
         {MtaSubwayTime.Networking.Api, name: MtaSubwayTime.Networking.Api},
         {Scenic, [scenic_start_config()]},
       ] ++ children(target())
