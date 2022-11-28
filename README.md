@@ -46,3 +46,11 @@ MIX_BUILD_PATH=~/build \
   MIX_TARGET=host \
   mix run --no-halt
 ```
+
+## Google Transit Data
+
+To download the latest google transit data used to load the base schedules, run:
+
+```sh
+./scripts/update_google_transit_data.sh
+```

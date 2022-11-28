@@ -19,3 +19,6 @@ erl_crash.dump
 # Intellij
 *.iml
 .idea/
+
+# Google Transit data from scripts/update_google_transit_data.sh
+google_transit/
