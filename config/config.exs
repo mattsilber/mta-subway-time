@@ -11,11 +11,22 @@ Application.start(:nerves_bootstrap)
 config :mta_subway_time, target: Mix.target()
 
 config :mta_subway_time, :subway_lines, [
-#  %{line: "B", stop_id: "D08N", direction: -1},
-  %{line: "ZZZ", stop_id: "0", direction: -1},
+#  %{
+#    line: "F",
+#    stop_id: "F24N",
+#    station_name: "7th Ave",
+#    direction: "Manhatten",
+#  },
+  %{
+    line: "ZZZ",
+    stop_id: "Z000",
+    station_name: "A Train",
+    direction: "No where"
+  },
 ]
 
 config :mta_subway_time, gtfs_api_key: System.get_env("GTFS_API_KEY")
+config :mta_subway_time, google_transit_data: System.get_env("GOOGLE_TRANSIT_DATA")
 
 # The name of the network interface to check network status
 config :mta_subway_time, network_interface_name: "eth0"

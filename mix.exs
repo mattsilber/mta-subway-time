@@ -71,7 +71,10 @@ defmodule MtaSubwayTime.MixProject do
       
       # Protobuf for Google
       {:protobuf, "~> 0.10.0"},
-      {:google_protos, "~> 0.1"}
+      {:google_protos, "~> 0.1"},
+
+      # Nimble for reading CSV files into structs
+      {:nimble_csv, "~> 1.2.0"},
     ]
   end
 
