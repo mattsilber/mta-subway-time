@@ -87,7 +87,43 @@ defmodule MtaSubwayTime.Networking.StopTimes do
   end
 
   def subway_arrival(stop_time, target) do
-    # TODO: Integrate with MtaSubwayTime.Networking.Data.get(line, stop_id, direction)
+    subway_arrival(
+      stop_time,
+      target,
+      updates_for_stop_time(stop_time, target)
+    )
+  end
+
+  defp updates_for_stop_time(stop_time, target) do
+    updates_for_stop_time(
+      stop_time,
+      target,
+      MtaSubwayTime.Networking.Data.get(target.line, target.stop_id, target.direction)
+    )
+  end
+
+  defp updates_for_stop_time(stop_time, target, nil) do
+    []
+  end
+
+  defp updates_for_stop_time(stop_time, target, feed_date) do
+    feed_date
+    |> Enum.flat_map(& &1.arrivals)
+    |> Enum.filter(& &1.trip_id == stop_time.trip_id)
+  end
+
+  defp subway_arrival(stop_time, target, arrival_updates) when length(arrival_updates) > 0 do
+    # TODO: Actually use updates
+    %MtaSubwayTime.Models.SubwayArrival{
+      line: target.line,
+      trip_id: stop_time.trip_id,
+      stop_id: target.stop_id,
+      direction: target.direction,
+      arrival_time: stop_time.arrival_time
+    }
+  end
+
+  defp subway_arrival(stop_time, target, arrival_updates) do
     %MtaSubwayTime.Models.SubwayArrival{
       line: target.line,
       trip_id: stop_time.trip_id,
