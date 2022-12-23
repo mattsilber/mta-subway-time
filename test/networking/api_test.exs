@@ -106,6 +106,7 @@ defmodule MtaSubwayTime.Networking.ApiTest do
         %TransitRealtime.FeedEntity{
           trip_update: %TransitRealtime.TripUpdate{
             trip: %TransitRealtime.TripDescriptor{
+              trip_id: "0",
               route_id: "A"
             },
             stop_time_update: [
@@ -121,6 +122,7 @@ defmodule MtaSubwayTime.Networking.ApiTest do
         %TransitRealtime.FeedEntity{
           trip_update: %TransitRealtime.TripUpdate{
             trip: %TransitRealtime.TripDescriptor{
+              trip_id: "1",
               route_id: "A"
             },
             stop_time_update: [
@@ -148,10 +150,26 @@ defmodule MtaSubwayTime.Networking.ApiTest do
 
     {:ok, result} = MtaSubwayTime.Networking.Api.handle_mta_feed_message(message, subway_lines, 0)
 
-    expected = %MtaSubwayTime.Models.SubwayLineStop{
+    expected = %MtaSubwayTime.Models.SubwayLineFeedUpdate{
       line: "A",
       stop_id: "0",
-      arrivals: [10, 20, 30]
+      arrivals: [
+        %MtaSubwayTime.Models.SubwayArrivalFeedUpdate{
+          stop_id: "0",
+          trip_id: "1",
+          arrival_time: 10
+        },
+        %MtaSubwayTime.Models.SubwayArrivalFeedUpdate{
+          stop_id: "0",
+          trip_id: "0",
+          arrival_time: 20
+        },
+        %MtaSubwayTime.Models.SubwayArrivalFeedUpdate{
+          stop_id: "0",
+          trip_id: "1",
+          arrival_time: 30
+        },
+      ]
     }
 
     assert MtaSubwayTime.Networking.Data.get("A", "0", -1) == expected

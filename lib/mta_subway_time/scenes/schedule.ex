@@ -68,17 +68,39 @@ defmodule MtaSubwayTime.Scene.Schedule do
     )
   end
 
-  defp title(%{line: line, stop_id: stop_id, direction: direction}) do
-    case MtaSubwayTime.Networking.Data.get(line, stop_id, direction) do
-      nil ->
-        "Loading train schedule..."
-      stop ->
-        title(stop)
-    end
+  defp title(%{line: line, stop_id: stop_id, direction: direction} = target) do
+    current_date = DateTime.utc_now
+    current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
+
+    arrival = MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date(stop_id, current_date)
+    |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
+
+    arrival_time_remaining =
+      arrival
+      |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
+      |> arrival_time_label
+
+    "#{line}: #{stop_id} for #{arrival.trip_id} @ #{arrival_time_remaining}"
   end
 
-  @spec title(MtaSubwayTime.Models.SubwayLineStop) :: String
-  defp title(stop) do
-    "#{stop.line}: #{stop.stop_id} @ #{stop.arrivals |> hd()}"
+  defp seconds_until_arrival(arrival_time, now) when now < arrival_time do
+    arrival_time - now
   end
+
+  defp seconds_until_arrival(arrival_time, now) do
+    (86_400 - now) + arrival_time
+  end
+
+  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 61 do
+    "#{seconds_until_arrival} seconds away"
+  end
+
+  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 121 do
+    "Less than 2 minutes away"
+  end
+
+  defp arrival_time_label(seconds_until_arrival) do
+    "~#{rem(seconds_until_arrival, 60)} minutes away"
+  end
+
 end

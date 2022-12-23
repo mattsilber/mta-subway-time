@@ -1,14 +1,16 @@
 defmodule MtaSubwayTime.Networking.Decoder do
 
   def subway_line_stops(feed_message, line, stop_id, _direction, epoch_seconds) do
-    arrivals = feed_message
-#               |> IO.inspect
-               |> filter_entities_for_line(line)
-               |> Enum.map(& &1.trip_update.stop_time_update)
-               |> Enum.flat_map(& stop_times_after_ascending(&1, stop_id, epoch_seconds))
-               |> stop_time_epochs_ascending
+    arrivals =
+      feed_message
+#      |> IO.inspect
+      |> filter_entities_for_line(line)
+      |> flatten_trip_with_stop_times
+      |> Enum.filter(& &1.stop_id == stop_id)
+      |> Enum.filter(& &1.arrival_time > epoch_seconds)
+      |> Enum.sort(& &1.arrival_time < &2.arrival_time)
 
-    %MtaSubwayTime.Models.SubwayLineStop{
+    %MtaSubwayTime.Models.SubwayLineFeedUpdate{
       line: line,
       stop_id: stop_id,
       arrivals: arrivals
@@ -36,19 +38,22 @@ defmodule MtaSubwayTime.Networking.Decoder do
     trip.route_id == line
   end
 
-  @spec stop_times_after_ascending([TransitRealtime.TripUpdate.StopTimeUpdate], String, integer) :: [TransitRealtime.TripUpdate.StopTimeUpdate]
-  def stop_times_after_ascending(stop_times, stop_id, epoch_seconds) do
+  defp flatten_trip_with_stop_times(stop_times) do
     stop_times
-    |> Enum.filter(& &1.stop_id == stop_id)
-    |> Enum.filter(& &1.arrival.time > epoch_seconds)
-    |> Enum.sort(& &1.arrival.time < &2.arrival.time)
+    |> Enum.flat_map(& map_trip_to_arrival_feed_update/1)
   end
 
-  @spec stop_time_epochs_ascending([TransitRealtime.TripUpdate.StopTimeUpdate]) :: [integer]
-  def stop_time_epochs_ascending(stop_times) do
-    stop_times
-    |> Enum.map(& &1.arrival.time)
-    |> Enum.sort(& &1 < &2)
+  defp map_trip_to_arrival_feed_update(stop_time) do
+    stop_time.trip_update.stop_time_update
+    |> Enum.map(
+         fn time_update ->
+           %MtaSubwayTime.Models.SubwayArrivalFeedUpdate{
+             stop_id: time_update.stop_id,
+             trip_id: stop_time.trip_update.trip.trip_id,
+             arrival_time: time_update.arrival.time
+           }
+         end
+       )
   end
 
 end

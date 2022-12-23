@@ -79,4 +79,15 @@ defmodule MtaSubwayTime.Networking.StopTimes do
     [next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day)]
   end
 
+  def subway_arrival(stop_time, target) do
+    # TODO: Integrate with MtaSubwayTime.Networking.Data.get(line, stop_id, direction)
+    %MtaSubwayTime.Models.SubwayArrival{
+      line: target.line,
+      trip_id: stop_time.trip_id,
+      stop_id: target.stop_id,
+      direction: target.direction,
+      arrival_time: stop_time.arrival_time
+    }
+  end
+
 end
