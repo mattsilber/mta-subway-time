@@ -75,6 +75,9 @@ defmodule MtaSubwayTime.MixProject do
 
       # Nimble for reading CSV files into structs
       {:nimble_csv, "~> 1.2.0"},
+
+      # Date parsing
+      {:timex, "~> 3.0"},
     ]
   end
 

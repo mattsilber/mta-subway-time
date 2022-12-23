@@ -11,17 +11,11 @@ Application.start(:nerves_bootstrap)
 config :mta_subway_time, target: Mix.target()
 
 config :mta_subway_time, :subway_lines, [
-#  %{
-#    line: "F",
-#    stop_id: "F24N",
-#    station_name: "7th Ave",
-#    direction: "Manhatten",
-#  },
   %{
-    line: "ZZZ",
-    stop_id: "Z000",
-    station_name: "A Train",
-    direction: "No where"
+    line: "F",
+    stop_id: "F24N",
+    station_name: "7th Ave",
+    direction: "Manhatten",
   },
 ]
 
@@ -50,4 +44,9 @@ if Mix.target() == :host do
   import_config "host.exs"
 else
   import_config "target.exs"
+end
+
+# Ensure our test configs override our normal host configs
+if config_env() == :test do
+  import_config "test.exs"
 end
