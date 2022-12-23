@@ -4,7 +4,7 @@ import Config
 
 config :mta_subway_time, :scenic_config, [
   name: :main_viewport,
-  size: {800, 480},
+  size: {400, 70},
   default_scene: MtaSubwayTime.Scene.Schedule,
   drivers: [
   # Uncomment to actually run locally not through Docker

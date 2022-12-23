@@ -10,11 +10,18 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   @graph Graph.build()
          |> text(
-              "Loading train schedule...",
-              font_size: 22,
-              translate: {10, 14},
+              "Loading schedule...",
+              font_size: 28,
+              translate: {12, 32},
               fill: :white,
-              id: :name_1
+              id: :line_name
+            )
+         |> text(
+              "",
+              font_size: 22,
+              translate: {12, 56},
+              fill: :white,
+              id: :time_remaining
             )
 
   def init(scene, _params, _options) do
@@ -39,9 +46,26 @@ defmodule MtaSubwayTime.Scene.Schedule do
   def handle_info(:refresh, scene) do
     Logger.info("Refreshing...")
 
+    target = Enum.at(MtaSubwayTime.subway_line_targets(), scene.assigns.target_index)
+
+    current_date = DateTime.utc_now
+    current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
+
+    arrival =
+      MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date(target.stop_id, current_date)
+      |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
+
+    arrival_time_remaining =
+      arrival
+      |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
+      |> arrival_time_label
+
+    IO.inspect("Line #{target.line} | Stop #{target.stop_id} | Trip #{arrival.trip_id} | Arrives #{arrival_time_remaining}")
+
     graph =
       scene.assigns.graph
-      |> modify_title(:name_1, scene)
+      |> modify_line_name(scene, target)
+      |> modify_time_remaining(scene, arrival_time_remaining)
 
     state =
       scene
@@ -51,36 +75,26 @@ defmodule MtaSubwayTime.Scene.Schedule do
     {:noreply, scene}
   end
 
-  @spec modify_title(Scenic.Graph, atom(), Scenic.Scene) :: Scenic.Graph
-  defp modify_title(graph, name, scene) do
-    target = Enum.at(MtaSubwayTime.subway_line_targets(), scene.assigns.target_index)
-
+  defp modify_line_name(graph, scene, target) do
     Graph.modify(
       graph,
-      name,
+      :line_name,
       &text(
         &1,
-        title(target) |> IO.inspect,
-        font_size: 22,
-        translate: {10, 14},
-        fill: :white
+        "#{target.line}: Stop ID #{target.stop_id}"
       )
     )
   end
 
-  defp title(%{line: line, stop_id: stop_id, direction: direction} = target) do
-    current_date = DateTime.utc_now
-    current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
-
-    arrival = MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date(stop_id, current_date)
-    |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
-
-    arrival_time_remaining =
-      arrival
-      |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
-      |> arrival_time_label
-
-    "#{line}: #{stop_id} for #{arrival.trip_id} @ #{arrival_time_remaining}"
+  defp modify_time_remaining(graph, scene, arrival_time_remaining) do
+    Graph.modify(
+      graph,
+      :time_remaining,
+      &text(
+        &1,
+        "#{arrival_time_remaining}"
+      )
+    )
   end
 
   defp seconds_until_arrival(arrival_time, now) when now < arrival_time do
@@ -100,7 +114,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
   end
 
   defp arrival_time_label(seconds_until_arrival) do
-    "~#{rem(seconds_until_arrival, 60)} minutes away"
+    "~#{seconds_until_arrival / 60} minutes away"
   end
 
 end
