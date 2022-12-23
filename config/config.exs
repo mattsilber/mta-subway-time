@@ -16,6 +16,7 @@ config :mta_subway_time, :subway_lines, [
     stop_id: "F24N",
     station_name: "7th Ave",
     direction: "Manhatten",
+    color: {:color_rgb, {229, 142, 38}},
   },
 ]
 

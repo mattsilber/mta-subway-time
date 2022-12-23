@@ -9,18 +9,35 @@ defmodule MtaSubwayTime.Scene.Schedule do
   @refresh_rate_ms 5 * 1000
 
   @graph Graph.build()
+         |> rectangle(
+              {400, 75},
+              fill: {:color_rgb, {52, 73, 94}}
+            )
+         |> circle(
+              100,
+              fill: {:color_rgb, {52, 73, 94}},
+              translate: {-42, 32},
+              id: :line_background
+            )
          |> text(
               "Loading schedule...",
-              font_size: 28,
-              translate: {12, 32},
-              fill: :white,
+              font_size: 42,
+              translate: {16, 48},
+              fill: {:color_rgb, {236, 240, 241}},
               id: :line_name
             )
          |> text(
               "",
+              font_size: 28,
+              translate: {72, 32},
+              fill: {:color_rgb, {236, 240, 241}},
+              id: :line_station_and_direction
+            )
+         |> text(
+              "",
               font_size: 22,
-              translate: {12, 56},
-              fill: :white,
+              translate: {72, 56},
+              fill: {:color_rgb, {236, 240, 241}},
               id: :time_remaining
             )
 
@@ -60,11 +77,13 @@ defmodule MtaSubwayTime.Scene.Schedule do
       |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
       |> arrival_time_label
 
-    IO.inspect("Line #{target.line} | Stop #{target.stop_id} | Trip #{arrival.trip_id} | Arrives #{arrival_time_remaining}")
+    IO.inspect("Line #{target.line} | Stop #{target.stop_id} | Direction #{target.direction} | Trip #{arrival.trip_id} | Arrives #{arrival_time_remaining}")
 
     graph =
       scene.assigns.graph
+      |> modify_line_color_background(scene, target)
       |> modify_line_name(scene, target)
+      |> modify_line_station_and_direction(scene, target)
       |> modify_time_remaining(scene, arrival_time_remaining)
 
     state =
@@ -75,13 +94,36 @@ defmodule MtaSubwayTime.Scene.Schedule do
     {:noreply, scene}
   end
 
+  defp modify_line_color_background(graph, scene, target) do
+    Graph.modify(
+      graph,
+      :line_background,
+      &circle(
+        &1,
+        100,
+        fill: target.color
+      )
+    )
+  end
+
   defp modify_line_name(graph, scene, target) do
     Graph.modify(
       graph,
       :line_name,
       &text(
         &1,
-        "#{target.line}: Stop ID #{target.stop_id}"
+        "#{target.line}"
+      )
+    )
+  end
+
+  defp modify_line_station_and_direction(graph, scene, target) do
+    Graph.modify(
+      graph,
+      :line_station_and_direction,
+      &text(
+        &1,
+        "To #{target.direction}"
       )
     )
   end
@@ -114,7 +156,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
   end
 
   defp arrival_time_label(seconds_until_arrival) do
-    "~#{seconds_until_arrival / 60} minutes away"
+    "~#{round(seconds_until_arrival / 60)} minutes away"
   end
 
 end
