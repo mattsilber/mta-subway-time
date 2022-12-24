@@ -11,6 +11,8 @@ defmodule MtaSubwayTime.Scene.Schedule do
   @stops_per_target 2
   @stops_refresh_rate_seconds 10
 
+  @targets_refresh_rate_seconds 20
+
   @graph Graph.build()
          |> rectangle(
               {400, 75},
@@ -65,8 +67,9 @@ defmodule MtaSubwayTime.Scene.Schedule do
       |> assign(
            graph: @graph,
            target_index: 0,
+           target_count: MtaSubwayTime.subway_line_targets() |> Enum.count,
            stop_index: 0,
-           last_subway_line_update_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
+           last_target_change_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
            last_stop_change_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
            refresh_timer: refresh_timer
          )
@@ -103,7 +106,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
       | Stop #{target.stop_id}
       | Direction #{target.direction}
       | Trip #{arrival.trip_id}
-      | Schedule Updated #{arrival.schedule_changed}, #{arrival.schedule_offset} seconds
+      | Schedule Updated #{arrival.schedule_changed}, #{arrival.schedule_offset} seconds difference
       | #{arrival_time_remaining}"
     )
 
@@ -118,6 +121,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
     state =
       scene
       |> assign(graph: graph)
+      |> assign_current_or_next_target_index(current_date)
       |> assign_current_or_next_stop_index(current_date)
       |> push_graph(graph)
 
@@ -214,6 +218,24 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   defp arrival_index_label(index) do
     "Train #{index + 1}"
+  end
+
+  defp assign_current_or_next_target_index(scene, date) do
+    cond do
+      DateTime.to_unix(date, :second) < scene.assigns.last_target_change_seconds + @targets_refresh_rate_seconds ->
+        assign(
+          scene,
+          target_index: scene.assigns.target_index
+        )
+      true ->
+        assign(
+          scene,
+          target_index: rem(scene.assigns.target_index + 1, scene.assigns.target_count),
+          stop_index: 0,
+          last_target_change_seconds: DateTime.to_unix(date, :second),
+          last_stop_change_seconds: DateTime.to_unix(date, :second)
+        )
+    end
   end
 
   defp assign_current_or_next_stop_index(scene, date) do
