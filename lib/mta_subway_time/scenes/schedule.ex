@@ -86,7 +86,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
     route = MtaSubwayTime.Networking.Routes.route(target.line)
 
     arrival =
-      MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target.stop_id, current_date, @stops_per_target)
+      MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target, current_date, @stops_per_target)
       |> Enum.at(scene.assigns.stop_index)
       |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
 
@@ -103,6 +103,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
       | Stop #{target.stop_id}
       | Direction #{target.direction}
       | Trip #{arrival.trip_id}
+      | Schedule Updated #{arrival.schedule_changed}, #{arrival.schedule_offset} seconds
       | #{arrival_time_remaining}"
     )
 

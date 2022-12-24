@@ -157,12 +157,12 @@ defmodule MtaSubwayTime.Networking.Api do
       {
         line_targets
         |> Enum.map(
-             fn %{line: line, stop_id: stop_id, direction: direction} ->
-               MtaSubwayTime.Networking.Decoder.subway_line_stops(message, line, stop_id, direction, epoch_time)
+             fn %{line: line, stop_id: stop_id} ->
+               MtaSubwayTime.Networking.Decoder.subway_line_stops(message, line, stop_id, epoch_time)
              end
            )
         |> Enum.filter(& !Enum.empty?(&1.arrivals))
-        |> Enum.each(& MtaSubwayTime.Networking.Data.put(&1.line, &1.stop_id, &1.direction, &1))
+        |> Enum.each(& MtaSubwayTime.Networking.Data.put(&1.line, &1.stop_id, &1))
       }
     }
   end

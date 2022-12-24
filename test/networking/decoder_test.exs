@@ -45,7 +45,7 @@ defmodule MtaSubwayTime.Networking.DecoderTest do
       ]
     }
 
-    result = MtaSubwayTime.Networking.Decoder.subway_line_stops(message, "A", "0", -1, 0)
+    result = MtaSubwayTime.Networking.Decoder.subway_line_stops(message, "A", "0", 0)
 
     expected_arrivals = [
       %MtaSubwayTime.Models.SubwayArrivalFeedUpdate{

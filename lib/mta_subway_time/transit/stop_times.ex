@@ -18,7 +18,9 @@ defmodule MtaSubwayTime.Networking.StopTimes do
                        stop_headsign: stop_headsign,
                        pickup_type: pickup_type,
                        drop_off_type: drop_off_type,
-                       shape_dist_traveled: shape_dist_traveled
+                       shape_dist_traveled: shape_dist_traveled,
+                       schedule_changed: false,
+                       schedule_offset: 0,
                      }
                    end
                  )
@@ -69,89 +71,88 @@ defmodule MtaSubwayTime.Networking.StopTimes do
     |> Enum.map(& %{&1 | :arrival_time => &1[:arrival_time] + arrival_offset})
   end
 
-  def next_stop_time_after_date(stop_id, date) do
+  def next_stop_time_after_date(target, date) do
     current_seconds_in_day = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(date)
-    stop_times_for_id = stop_times(stop_id, date)
+    stop_times_for_id = stop_times(target.stop_id, date)
 
-    next_stop_time_after_second_in_day(stop_times_for_id, current_seconds_in_day)
+    next_stop_time_after_second_in_day(target, stop_times_for_id, current_seconds_in_day)
   end
 
-  defp next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day) do
-    # stop_times should return today's schedule, followed by tomorrow's.
-    # This shouldn't be able to fail... lol
-    Enum.find(stop_times_for_id, & (seconds_in_day < &1[:arrival_time]))
+  defp next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day) do
+    # stop_times should return yesterday's, today's and tomorrow's schedule,
+    # but need to account for the feed updates for a line, if they're available
+    stop_times_for_id
+    |> Enum.map(& adjusted_stop_time_with_feed_data(&1, MtaSubwayTime.Networking.Data.get(target)))
+    |> Enum.find(& (seconds_in_day < &1[:arrival_time]))
   end
 
-  def next_stop_times_after_date(stop_id, date, count) do
+  defp adjusted_stop_time_with_feed_data(stop_time, nil) do
+    stop_time
+  end
+
+  defp adjusted_stop_time_with_feed_data(stop_time, data) do
+    # I'm assuming we won't have feed updates for tomorrow's schedules, but that's probably wrong
+    arrival_time =
+      data
+      |> feed_data_arrival(stop_time)
+      |> stop_time_from_feed_arrival(stop_time)
+
+    offset = arrival_time - stop_time[:arrival_time]
+    changed = offset != 0
+
+    %{stop_time | :arrival_time => arrival_time, :schedule_changed => changed, :schedule_offset => offset}
+  end
+
+  defp feed_data_arrival(data, stop_time) do
+    data.arrivals
+    |> Enum.find(& &1.trip_id == stop_time.trip_id)
+  end
+
+  defp stop_time_from_feed_arrival(nil, stop_time) do
+    stop_time.arrival_time
+  end
+
+  defp stop_time_from_feed_arrival(arrival, stop_time) do
+    arrival.arrival_time
+    |> DateTime.from_unix!(:second)
+    |> MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day
+  end
+
+  def next_stop_times_after_date(target, date, count) do
     current_seconds_in_day = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(date)
-    stop_times_for_id = stop_times(stop_id, date)
+    stop_times_for_id = stop_times(target.stop_id, date)
 
-    next_stop_times_after_seconds_in_day(stop_times_for_id, current_seconds_in_day, count - 1, 0)
+    next_stop_times_after_seconds_in_day(target, stop_times_for_id, current_seconds_in_day, count - 1, 0)
   end
 
-  defp next_stop_times_after_seconds_in_day(stop_times_for_id, seconds_in_day, count, 0) do
-    current_next_stop_time = next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day)
-    upcoming_stop_times = next_stop_times_after_seconds_in_day(stop_times_for_id, current_next_stop_time[:arrival_time] + 1, count, 1)
+  defp next_stop_times_after_seconds_in_day(target, stop_times_for_id, seconds_in_day, count, 0) do
+    current_next_stop_time = next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day)
+    upcoming_stop_times = next_stop_times_after_seconds_in_day(target, stop_times_for_id, current_next_stop_time[:arrival_time] + 1, count, 1)
 
     [current_next_stop_time | upcoming_stop_times]
   end
 
-  defp next_stop_times_after_seconds_in_day(stop_times_for_id, seconds_in_day, count_indexed, index) when index < count_indexed do
-    current_next_stop_time = next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day)
+  defp next_stop_times_after_seconds_in_day(target, stop_times_for_id, seconds_in_day, count_indexed, index) when index < count_indexed do
+    current_next_stop_time = next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day)
     last_stop_time = Enum.at(stop_times_for_id, index)
-    upcoming_stop_times = next_stop_times_after_seconds_in_day(stop_times_for_id, last_stop_time[:arrival_time] + 1, count_indexed, index + 1)
+    upcoming_stop_times = next_stop_times_after_seconds_in_day(target, stop_times_for_id, last_stop_time[:arrival_time] + 1, count_indexed, index + 1)
 
     [current_next_stop_time | upcoming_stop_times]
   end
 
-  defp next_stop_times_after_seconds_in_day(stop_times_for_id, seconds_in_day, count_indexed, index) do
-    [next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day)]
+  defp next_stop_times_after_seconds_in_day(target, stop_times_for_id, seconds_in_day, count_indexed, index) do
+    [next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day)]
   end
 
   def subway_arrival(stop_time, target) do
-    subway_arrival(
-      stop_time,
-      target,
-      updates_for_stop_time(stop_time, target)
-    )
-  end
-
-  defp updates_for_stop_time(stop_time, target) do
-    updates_for_stop_time(
-      stop_time,
-      target,
-      MtaSubwayTime.Networking.Data.get(target.line, target.stop_id, target.direction)
-    )
-  end
-
-  defp updates_for_stop_time(stop_time, target, nil) do
-    []
-  end
-
-  defp updates_for_stop_time(stop_time, target, feed_date) do
-    feed_date
-    |> Enum.flat_map(& &1.arrivals)
-    |> Enum.filter(& &1.trip_id == stop_time.trip_id)
-  end
-
-  defp subway_arrival(stop_time, target, arrival_updates) when length(arrival_updates) > 0 do
-    # TODO: Actually use updates
     %MtaSubwayTime.Models.SubwayArrival{
       line: target.line,
       trip_id: stop_time.trip_id,
       stop_id: target.stop_id,
       direction: target.direction,
-      arrival_time: stop_time.arrival_time
-    }
-  end
-
-  defp subway_arrival(stop_time, target, arrival_updates) do
-    %MtaSubwayTime.Models.SubwayArrival{
-      line: target.line,
-      trip_id: stop_time.trip_id,
-      stop_id: target.stop_id,
-      direction: target.direction,
-      arrival_time: stop_time.arrival_time
+      arrival_time: stop_time.arrival_time,
+      schedule_changed: stop_time.schedule_changed,
+      schedule_offset: stop_time.schedule_offset
     }
   end
 

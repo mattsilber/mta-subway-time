@@ -1,6 +1,6 @@
 defmodule MtaSubwayTime.Networking.Decoder do
 
-  def subway_line_stops(feed_message, line, stop_id, _direction, epoch_seconds) do
+  def subway_line_stops(feed_message, line, stop_id, epoch_seconds) do
     arrivals =
       feed_message
 #      |> IO.inspect

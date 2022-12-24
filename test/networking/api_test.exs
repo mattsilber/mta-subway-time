@@ -172,6 +172,6 @@ defmodule MtaSubwayTime.Networking.ApiTest do
       ]
     }
 
-    assert MtaSubwayTime.Networking.Data.get("A", "0", -1) == expected
+    assert MtaSubwayTime.Networking.Data.get("A", "0") == expected
   end
 end
