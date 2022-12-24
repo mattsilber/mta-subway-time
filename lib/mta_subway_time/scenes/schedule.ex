@@ -6,7 +6,10 @@ defmodule MtaSubwayTime.Scene.Schedule do
   import Scenic.Primitives
   import Scenic.Components
 
-  @refresh_rate_ms 5 * 1000
+  @refresh_rate_ms 1000
+
+  @stops_per_target 2
+  @stops_refresh_rate_seconds 10
 
   @graph Graph.build()
          |> rectangle(
@@ -62,7 +65,9 @@ defmodule MtaSubwayTime.Scene.Schedule do
       |> assign(
            graph: @graph,
            target_index: 0,
-           last_subway_line_update_ms: 0,
+           stop_index: 0,
+           last_subway_line_update_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
+           last_stop_change_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
            refresh_timer: refresh_timer
          )
       |> push_graph(@graph)
@@ -72,8 +77,6 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   @spec handle_info(:refresh, Scenic.Scene) :: {:no_reply, Scenic.Scene}
   def handle_info(:refresh, scene) do
-    Logger.info("Refreshing...")
-
     target = Enum.at(MtaSubwayTime.subway_line_targets(), scene.assigns.target_index)
 
     current_date = DateTime.utc_now
@@ -83,17 +86,20 @@ defmodule MtaSubwayTime.Scene.Schedule do
     route = MtaSubwayTime.Networking.Routes.route(target.line)
 
     arrival =
-      MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date(target.stop_id, current_date)
+      MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target.stop_id, current_date, @stops_per_target)
+      |> Enum.at(scene.assigns.stop_index)
       |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
 
     arrival_time_remaining =
       arrival
-      |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
+      |> (& seconds_until_arrival(&1.arrival_time, current_time_of_day_in_seconds)).()
       |> arrival_time_label
 
-    IO.inspect(
-      "Line #{target.line}
+    Logger.info(
+      "Active Arrival Info:
+      | Line #{target.line}
       | Station #{stop.stop_name}
+      | Index #{scene.assigns.stop_index}
       | Stop #{target.stop_id}
       | Direction #{target.direction}
       | Trip #{arrival.trip_id}
@@ -111,9 +117,10 @@ defmodule MtaSubwayTime.Scene.Schedule do
     state =
       scene
       |> assign(graph: graph)
+      |> assign_current_or_next_stop_index(current_date)
       |> push_graph(graph)
 
-    {:noreply, scene}
+    {:noreply, state}
   end
 
   defp modify_line_color_background(graph, scene, color) do
@@ -139,6 +146,17 @@ defmodule MtaSubwayTime.Scene.Schedule do
     )
   end
 
+  defp modify_station_name(graph, scene, stop) do
+    Graph.modify(
+      graph,
+      :station_name,
+      &text(
+        &1,
+        "#{stop.stop_name} (#{arrival_index_label(scene.assigns.stop_index)})"
+      )
+    )
+  end
+
   defp modify_direction(graph, scene, target) do
     Graph.modify(
       graph,
@@ -146,17 +164,6 @@ defmodule MtaSubwayTime.Scene.Schedule do
       &text(
         &1,
         "To #{target.direction}"
-      )
-    )
-  end
-
-  defp modify_station_name(graph, scene, stop) do
-    Graph.modify(
-      graph,
-      :station_name,
-      &text(
-        &1,
-        "#{stop.stop_name}"
       )
     )
   end
@@ -194,6 +201,34 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   defp arrival_time_label(seconds_until_arrival) do
     "#{round(seconds_until_arrival / 60)} minutes away"
+  end
+
+  defp arrival_index_label(index) when index == 0 do
+    "First Train"
+  end
+
+  defp arrival_index_label(index) when index == 1 do
+    "Second Train"
+  end
+
+  defp arrival_index_label(index) do
+    "Train #{index + 1}"
+  end
+
+  defp assign_current_or_next_stop_index(scene, date) do
+    cond do
+      DateTime.to_unix(date, :second) < scene.assigns.last_stop_change_seconds + @stops_refresh_rate_seconds ->
+        assign(
+          scene,
+          stop_index: scene.assigns.stop_index
+        )
+      true ->
+        assign(
+          scene,
+          stop_index: rem(scene.assigns.stop_index + 1, @stops_per_target),
+          last_stop_change_seconds: DateTime.to_unix(date, :second)
+        )
+    end
   end
 
 end
