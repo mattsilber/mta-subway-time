@@ -2,16 +2,18 @@ defmodule MtaSubwayTime.Networking.StopTimesTest do
   use ExUnit.Case, async: true
 
   test "includes stop times for stop ID" do
+    # Friday
     date = Timex.parse!("12/23/2022 01:59:29", "%m/%d/%Y %T", :strftime)
     times_F24N = MtaSubwayTime.Networking.StopTimes.stop_times("F24N", date)
 
-    # Really hoping 336 is the actual count for the Weekday schedule :sweat:
-    assert 336 == Enum.count(times_F24N)
+    # Really hoping 901 is the actual count for the Weekday + Weekday + Saturday schedule :sweat:
+    assert 901 == Enum.count(times_F24N)
 
     assert times_F24N |> Enum.all?(fn time -> time[:stop_id] == "F24N" end)
   end
 
   test "does not include stop times for stop ID not in target list" do
+    # Friday
     date = Timex.parse!("12/23/2022 01:59:29", "%m/%d/%Y %T", :strftime)
     times_N03R = MtaSubwayTime.Networking.StopTimes.stop_times("N03R", date)
 
@@ -19,41 +21,62 @@ defmodule MtaSubwayTime.Networking.StopTimesTest do
   end
 
   test "transforms date to seconds in day" do
-    date = Timex.parse!("12/23/2022 01:59:29", "%m/%d/%Y %T", :strftime)
-    first_timeF24N = MtaSubwayTime.Networking.StopTimes.stop_times("F24N", date) |> hd()
+    # Last F24N Weekday Stops: 26:05:30 = Saturday 02:05:30
 
-    # I'm assuming the schedules are meant to wrap but have no idea :shrug:
+    # Saturday
+    date = Timex.parse!("12/24/2022 02:05:29", "%m/%d/%Y %T", :strftime)
+    first_timeF24N = MtaSubwayTime.Networking.StopTimes.stop_times("F24N", date) |> Enum.find(& &1[:arrival_time] > 0)
+
+    # Saturday, but rollover from Weekday schedule
     assert "24:05:00" == first_timeF24N[:arrival_time_raw]
     assert 300 == first_timeF24N[:arrival_time]
   end
 
   test "returns next stop time in future" do
-    date = Timex.parse!("12/23/2022 23:55:29", "%m/%d/%Y %T", :strftime)
+    # Last F24N Weekday Stops: 26:05:30 = Saturday 02:05:30
+    # Next F24N Saturday Stop: 02:09:30
+
+    # Saturday
+    date = Timex.parse!("12/24/2022 02:05:29", "%m/%d/%Y %T", :strftime)
     next_stop_time = MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date("F24N", date)
 
-    assert "23:55:30" == next_stop_time[:arrival_time_raw]
-    assert 86130 == next_stop_time[:arrival_time]
+    # Saturday, but Weekday schedule
+    assert "26:05:30" == next_stop_time[:arrival_time_raw]
+    assert 7530 == next_stop_time[:arrival_time]
   end
 
   test "returns first stop time after last stop time" do
-    date = Timex.parse!("12/23/2022 23:59:31", "%m/%d/%Y %T", :strftime)
+    # Last F24N Weekday Stops: 26:05:30 = Saturday 02:05:30
+    # Next F24N Saturday Stop: 02:09:30
+
+    # Saturday
+    date = Timex.parse!("12/24/2022 02:05:31", "%m/%d/%Y %T", :strftime)
     next_stop_time = MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date("F24N", date)
 
-    assert "24:05:00" == next_stop_time[:arrival_time_raw]
-    assert 300 == next_stop_time[:arrival_time]
+    # Saturday
+    assert "02:09:30" == next_stop_time[:arrival_time_raw]
+    assert 7770 == next_stop_time[:arrival_time]
   end
 
   test "returns next stop times rolling over" do
-    date = Timex.parse!("12/23/2022 23:55:29", "%m/%d/%Y %T", :strftime)
+    # Last F24N Weekday Stops: 26:05:30 = Saturday 02:05:30
+    # Next F24N Saturday Stop: 02:09:30
+
+    # Saturday
+    date = Timex.parse!("12/24/2022 02:05:29", "%m/%d/%Y %T", :strftime)
     next_stop_times = MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date("F24N", date, 2)
 
     assert 2 == Enum.count(next_stop_times)
 
-    assert 86130 == hd(next_stop_times)[:arrival_time]
-    assert 300 == List.last(next_stop_times)[:arrival_time]
+    # Weekday Schedule
+    assert 7530 == hd(next_stop_times)[:arrival_time]
+
+    # Saturday Schedule
+    assert 7770 == List.last(next_stop_times)[:arrival_time]
   end
 
   test "returns variable stop times" do
+    # Friday
     date = Timex.parse!("12/23/2022 01:59:29", "%m/%d/%Y %T", :strftime)
     next_stop_times = MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date("F24N", date, 10)
 

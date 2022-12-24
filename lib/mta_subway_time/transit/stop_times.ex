@@ -37,6 +37,26 @@ defmodule MtaSubwayTime.Networking.StopTimes do
               |> Enum.sort_by(& &1[:arrival_time])
 
   def stop_times(stop_id, date) do
+    # Include yesterday's, today's, and tomorrow's schedules with offsets
+    # to sort rollovers
+    stop_times(stop_id, date, 2, 0)
+    |> List.flatten
+    |> Enum.sort_by(& &1[:arrival_time])
+  end
+
+  defp stop_times(stop_id, date, count_indexed, 0) do
+    [stop_times(stop_id, date |> Timex.shift(days: -1), -86_400) | stop_times(stop_id, date, count_indexed, 1)]
+  end
+
+  defp stop_times(stop_id, date, count_indexed, index) when index < count_indexed do
+    [stop_times(stop_id, date |> Timex.shift(days: index - 1), 86_400 * (index - 1)) | stop_times(stop_id, date, count_indexed, index + 1)]
+  end
+
+  defp stop_times(stop_id, date, count_indexed, index) do
+    [stop_times(stop_id, date |> Timex.shift(days: index - 1), 86_400 * (index - 1))]
+  end
+
+  defp stop_times(stop_id, date, arrival_offset) do
     day_of_week_filter = case Date.day_of_week(date) do
       7 -> "Sunday"
       6 -> "Saturday"
@@ -46,6 +66,7 @@ defmodule MtaSubwayTime.Networking.StopTimes do
     @stop_times
     |> Enum.filter(& &1[:stop_id] == stop_id)
     |> Enum.filter(& String.contains?(&1[:trip_id], day_of_week_filter))
+    |> Enum.map(& %{&1 | :arrival_time => &1[:arrival_time] + arrival_offset})
   end
 
   def next_stop_time_after_date(stop_id, date) do
@@ -56,8 +77,9 @@ defmodule MtaSubwayTime.Networking.StopTimes do
   end
 
   defp next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day) do
+    # stop_times should return today's schedule, followed by tomorrow's.
+    # This shouldn't be able to fail... lol
     Enum.find(stop_times_for_id, & (seconds_in_day < &1[:arrival_time]))
-    || stop_times_for_id |> hd()
   end
 
   def next_stop_times_after_date(stop_id, date, count) do
@@ -82,7 +104,7 @@ defmodule MtaSubwayTime.Networking.StopTimes do
     [current_next_stop_time | upcoming_stop_times]
   end
 
-  defp next_stop_times_after_seconds_in_day(stop_times_for_id, seconds_in_day, count_indexed, index) when index > 0 do
+  defp next_stop_times_after_seconds_in_day(stop_times_for_id, seconds_in_day, count_indexed, index) do
     [next_stop_time_after_second_in_day(stop_times_for_id, seconds_in_day)]
   end
 

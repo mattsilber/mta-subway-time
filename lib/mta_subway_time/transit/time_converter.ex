@@ -6,7 +6,7 @@ defmodule MtaSubwayTime.Networking.TimeConverter do
         hoursInSeconds = String.to_integer(hours) * 60 * 60
         minutesInSeconds = String.to_integer(minutes) * 60
 
-        rem(hoursInSeconds + minutesInSeconds + String.to_integer(seconds), 86_400)
+        hoursInSeconds + minutesInSeconds + String.to_integer(seconds)
       nil ->
         -1
     end
