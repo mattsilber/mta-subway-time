@@ -20,24 +20,35 @@ defmodule MtaSubwayTime.Scene.Schedule do
               id: :line_background
             )
          |> text(
-              "Loading schedule...",
-              font_size: 42,
-              translate: {16, 48},
+              "Loading...",
+              font_size: 48,
+              translate: {16, 52},
               fill: {:color_rgb, {236, 240, 241}},
+              font: :roboto,
               id: :line_name
             )
          |> text(
               "",
-              font_size: 28,
-              translate: {72, 32},
+              font_size: 12,
+              translate: {74, 16},
               fill: {:color_rgb, {236, 240, 241}},
-              id: :line_station_and_direction
+              font: :roboto,
+              id: :station_name
             )
          |> text(
               "",
-              font_size: 22,
-              translate: {72, 56},
+              font_size: 12,
+              translate: {74, 28},
               fill: {:color_rgb, {236, 240, 241}},
+              font: :roboto,
+              id: :direction
+            )
+         |> text(
+              "",
+              font_size: 32,
+              translate: {74, 58},
+              fill: {:color_rgb, {236, 240, 241}},
+              font: :roboto,
               id: :time_remaining
             )
 
@@ -68,6 +79,9 @@ defmodule MtaSubwayTime.Scene.Schedule do
     current_date = DateTime.utc_now
     current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
 
+    stop = MtaSubwayTime.Networking.Stops.stop(target.stop_id)
+    route = MtaSubwayTime.Networking.Routes.route(target.line)
+
     arrival =
       MtaSubwayTime.Networking.StopTimes.next_stop_time_after_date(target.stop_id, current_date)
       |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
@@ -77,13 +91,21 @@ defmodule MtaSubwayTime.Scene.Schedule do
       |> (fn arrival -> seconds_until_arrival(arrival.arrival_time, current_time_of_day_in_seconds) end).()
       |> arrival_time_label
 
-    IO.inspect("Line #{target.line} | Stop #{target.stop_id} | Direction #{target.direction} | Trip #{arrival.trip_id} | Arrives #{arrival_time_remaining}")
+    IO.inspect(
+      "Line #{target.line}
+      | Station #{stop.stop_name}
+      | Stop #{target.stop_id}
+      | Direction #{target.direction}
+      | Trip #{arrival.trip_id}
+      | #{arrival_time_remaining}"
+    )
 
     graph =
       scene.assigns.graph
-      |> modify_line_color_background(scene, target)
+      |> modify_line_color_background(scene, route.route_color)
       |> modify_line_name(scene, target)
-      |> modify_line_station_and_direction(scene, target)
+      |> modify_station_name(scene, stop)
+      |> modify_direction(scene, target)
       |> modify_time_remaining(scene, arrival_time_remaining)
 
     state =
@@ -94,14 +116,14 @@ defmodule MtaSubwayTime.Scene.Schedule do
     {:noreply, scene}
   end
 
-  defp modify_line_color_background(graph, scene, target) do
+  defp modify_line_color_background(graph, scene, color) do
     Graph.modify(
       graph,
       :line_background,
       &circle(
         &1,
         100,
-        fill: target.color
+        fill: {:color_rgb, {color.r, color.g, color.b}}
       )
     )
   end
@@ -117,13 +139,24 @@ defmodule MtaSubwayTime.Scene.Schedule do
     )
   end
 
-  defp modify_line_station_and_direction(graph, scene, target) do
+  defp modify_direction(graph, scene, target) do
     Graph.modify(
       graph,
-      :line_station_and_direction,
+      :direction,
       &text(
         &1,
         "To #{target.direction}"
+      )
+    )
+  end
+
+  defp modify_station_name(graph, scene, stop) do
+    Graph.modify(
+      graph,
+      :station_name,
+      &text(
+        &1,
+        "#{stop.stop_name}"
       )
     )
   end
@@ -151,12 +184,16 @@ defmodule MtaSubwayTime.Scene.Schedule do
     "#{seconds_until_arrival} seconds away"
   end
 
+  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 91 do
+    "~1 minute away"
+  end
+
   defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 121 do
-    "Less than 2 minutes away"
+    "~2 minutes away"
   end
 
   defp arrival_time_label(seconds_until_arrival) do
-    "~#{round(seconds_until_arrival / 60)} minutes away"
+    "#{round(seconds_until_arrival / 60)} minutes away"
   end
 
 end

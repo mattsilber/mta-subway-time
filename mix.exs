@@ -78,6 +78,9 @@ defmodule MtaSubwayTime.MixProject do
 
       # Date parsing
       {:timex, "~> 3.0"},
+
+      # Parsing RGB values....
+      {:chameleon, "~> 2.2.0"},
     ]
   end
 
