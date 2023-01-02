@@ -40,7 +40,7 @@ defmodule MtaSubwayTime.MixProject do
       {:nerves_time, "~> 0.4"},
 
       # Nerves.Network to check network status
-      {:nerves_network, "~> 0.5"},
+      {:nerves_network_interface, "~> 0.4.6"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.13.0", targets: @all_targets},

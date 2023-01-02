@@ -47,6 +47,23 @@ MIX_BUILD_PATH=~/build \
   mix run --no-halt
 ```
 
+## Mac Setup
+
+```
+brew install glew
+brew install glfw
+```
+
+### Docker Setup
+
+Launch Quartz instance:
+Original instructions: https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
+Quartz: https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
+
+```
+xhost + ${hostname}
+```
+
 ## Google Transit Data
 
 To download the latest google transit data used to load the base schedules, run:

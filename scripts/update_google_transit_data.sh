@@ -1,7 +1,7 @@
-rm -rf ./google_transit
+rm -rf ./google_transit || true
 
 wget http://web.mta.info/developers/data/nyct/subway/google_transit.zip
 
 unzip google_transit.zip -d google_transit
 
-rm google_transit.zip
+rm google_transit.zip || true
