@@ -22,8 +22,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
               :line_background_1,
               :arrival_index_1,
               :line_name_1,
-              :station_name_1,
-              :direction_1,
+              :station_and_direction_1,
               :time_remaining_1,
               {0, 0}
             )
@@ -31,8 +30,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
               :line_background_2,
               :arrival_index_2,
               :line_name_2,
-              :station_name_2,
-              :direction_2,
+              :station_and_direction_2,
               :time_remaining_2,
               {0, 72}
             )
@@ -79,8 +77,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
            :line_background_1,
            :arrival_index_1,
            :line_name_1,
-           :station_name_1,
-           :direction_1,
+           :station_and_direction_1,
            :time_remaining_1
          )
       |> MtaSubwayTime.Scene.LineScheduleView.modify_view(
@@ -92,8 +89,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
            :line_background_2,
            :arrival_index_2,
            :line_name_2,
-           :station_name_2,
-           :direction_2,
+           :station_and_direction_2,
            :time_remaining_2
          )
 

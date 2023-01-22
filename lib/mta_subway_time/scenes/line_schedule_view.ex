@@ -6,54 +6,48 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
   import Scenic.Primitives
   import Scenic.Components
 
-  @circle_background_radius 26
-  @content_x_offset 68
+  @circle_background_radius 22
 
-  def create_view(graph, line_background_id, index_id, line_id, station_name_id, direction_id, time_remaining_id, {offset_x, offset_y}) do
+  @content_x_offset 80
+  @content_text_color {236, 240, 241}
+
+  def create_view(graph, line_background_id, index_id, line_id, station_and_direction_id, time_remaining_id, {offset_x, offset_y}) do
     graph
     |> circle(
          @circle_background_radius,
          fill: {:color_rgb, {52, 73, 94}},
-         translate: {30 + offset_x, 32 + offset_y},
+         translate: {50 + offset_x, 34 + offset_y},
          id: line_background_id
        )
     |> text(
          "Loading...",
-         font_size: 44,
-         translate: {18 + offset_x, 48 + offset_y},
-         fill: {:color_rgb, {236, 240, 241}},
+         font_size: 38,
+         translate: {40 + offset_x, 48 + offset_y},
+         fill: {:color_rgb, @content_text_color},
          font: :roboto,
          id: line_id
        )
     |> text(
          "",
-         font_size: 12,
-         translate: {@content_x_offset + offset_x, 16 + offset_y},
-         fill: {:color_rgb, {236, 240, 241}},
+         font_size: 22,
+         translate: {6 + offset_x, 48 + offset_y},
+         fill: {:color_rgb, @content_text_color},
          font: :roboto,
          id: index_id
        )
     |> text(
          "",
          font_size: 12,
-         translate: {@content_x_offset + offset_x, 16 + offset_y},
-         fill: {:color_rgb, {236, 240, 241}},
+         translate: {@content_x_offset + offset_x, 22 + offset_y},
+         fill: {:color_rgb, @content_text_color},
          font: :roboto,
-         id: station_name_id
-       )
-    |> text(
-         "",
-         font_size: 12,
-         translate: {@content_x_offset + offset_x, 28 + offset_y},
-         fill: {:color_rgb, {236, 240, 241}},
-         font: :roboto,
-         id: direction_id
+         id: station_and_direction_id
        )
     |> text(
          "",
          font_size: 32,
-         translate: {@content_x_offset + offset_x, 58 + offset_y},
-         fill: {:color_rgb, {236, 240, 241}},
+         translate: {@content_x_offset + offset_x, 52 + offset_y},
+         fill: {:color_rgb, @content_text_color},
          font: :roboto,
          id: time_remaining_id
        )
@@ -69,8 +63,7 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
         line_background_id,
         index_id,
         line_id,
-        station_name_id,
-        direction_id,
+        station_and_direction_id,
         time_remaining_id
       ) do
 
@@ -102,8 +95,8 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
     graph
     |> modify_line_color_background(scene, route.route_color, line_background_id)
     |> modify_line_name(scene, target, line_id)
-    |> modify_station_name(scene, stop, arrival_index, station_name_id)
-    |> modify_direction(scene, target, direction_id)
+    |> modify_arrival_index(scene, arrival_index, index_id)
+    |> modify_station_and_direction(scene, target, stop, station_and_direction_id)
     |> modify_time_remaining(scene, arrival_time_remaining, time_remaining_id)
   end
 
@@ -130,24 +123,24 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
     )
   end
 
-  defp modify_station_name(graph, scene, stop, arrival_index, station_name_id) do
+  defp modify_arrival_index(graph, scene, arrival_index, index_id) do
     Graph.modify(
       graph,
-      station_name_id,
+      index_id,
       &text(
         &1,
-        "#{stop.stop_name} (#{arrival_index_label(arrival_index)})"
+        arrival_index_label(arrival_index)
       )
     )
   end
 
-  defp modify_direction(graph, scene, target, direction_id) do
+  defp modify_station_and_direction(graph, scene, target, stop, station_and_direction_id) do
     Graph.modify(
       graph,
-      direction_id,
+      station_and_direction_id,
       &text(
         &1,
-        "To #{target.direction}"
+        "#{stop.stop_name} to #{target.direction}"
       )
     )
   end
@@ -187,20 +180,8 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
     "#{round(seconds_until_arrival / 60)} minutes away"
   end
 
-  defp arrival_index_label(index) when index == 0 do
-    "Next Train"
-  end
-
-  defp arrival_index_label(index) when index == 1 do
-    "Second Train"
-  end
-
-  defp arrival_index_label(index) when index == 2 do
-    "Third Train"
-  end
-
   defp arrival_index_label(index) do
-    "Train #{index + 1}"
+    "#{index + 1}."
   end
 
 end
