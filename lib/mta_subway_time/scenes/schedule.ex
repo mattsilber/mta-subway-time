@@ -8,53 +8,33 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   @refresh_rate_ms 1000
 
-  @stops_per_target 2
+  @stops_per_target 4
   @stops_refresh_rate_seconds 10
 
   @targets_refresh_rate_seconds 20
 
   @graph Graph.build()
          |> rectangle(
-              {400, 75},
+              {400, 70},
               fill: {:color_rgb, {52, 73, 94}}
             )
-         |> circle(
-              100,
-              fill: {:color_rgb, {52, 73, 94}},
-              translate: {-42, 32},
-              id: :line_background
+         |> MtaSubwayTime.Scene.LineScheduleView.create_view(
+              :line_background_1,
+              :arrival_index_1,
+              :line_name_1,
+              :station_name_1,
+              :direction_1,
+              :time_remaining_1,
+              {0, 0}
             )
-         |> text(
-              "Loading...",
-              font_size: 48,
-              translate: {16, 52},
-              fill: {:color_rgb, {236, 240, 241}},
-              font: :roboto,
-              id: :line_name
-            )
-         |> text(
-              "",
-              font_size: 12,
-              translate: {74, 16},
-              fill: {:color_rgb, {236, 240, 241}},
-              font: :roboto,
-              id: :station_name
-            )
-         |> text(
-              "",
-              font_size: 12,
-              translate: {74, 28},
-              fill: {:color_rgb, {236, 240, 241}},
-              font: :roboto,
-              id: :direction
-            )
-         |> text(
-              "",
-              font_size: 32,
-              translate: {74, 58},
-              fill: {:color_rgb, {236, 240, 241}},
-              font: :roboto,
-              id: :time_remaining
+         |> MtaSubwayTime.Scene.LineScheduleView.create_view(
+              :line_background_2,
+              :arrival_index_2,
+              :line_name_2,
+              :station_name_2,
+              :direction_2,
+              :time_remaining_2,
+              {0, 72}
             )
 
   def init(scene, _params, _options) do
@@ -68,7 +48,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
            graph: @graph,
            target_index: 0,
            target_count: MtaSubwayTime.subway_line_targets() |> Enum.count,
-           stop_index: 0,
+           secondary_stop_index: 0,
            last_target_change_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
            last_stop_change_seconds: DateTime.utc_now |> DateTime.to_unix(:second),
            refresh_timer: refresh_timer
@@ -85,38 +65,37 @@ defmodule MtaSubwayTime.Scene.Schedule do
     current_date = DateTime.utc_now
     current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
 
-    stop = MtaSubwayTime.Networking.Stops.stop(target.stop_id)
-    route = MtaSubwayTime.Networking.Routes.route(target.line)
+    arrivals = MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target, current_date, @stops_per_target)
 
-    arrival =
-      MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target, current_date, @stops_per_target)
-      |> Enum.at(scene.assigns.stop_index)
-      |> MtaSubwayTime.Networking.StopTimes.subway_arrival(target)
-
-    arrival_time_remaining =
-      arrival
-      |> (& seconds_until_arrival(&1.arrival_time, current_time_of_day_in_seconds)).()
-      |> arrival_time_label
-
-    Logger.info(
-      "Active Arrival Info:
-      | Line #{target.line}
-      | Station #{stop.stop_name}
-      | Index #{scene.assigns.stop_index}
-      | Stop #{target.stop_id}
-      | Direction #{target.direction}
-      | Trip #{arrival.trip_id}
-      | Schedule Updated #{arrival.schedule_changed}, #{arrival.schedule_offset} seconds difference
-      | #{arrival_time_remaining}"
-    )
-
+    # Note the `secondary_stop_index + 1` is 0 based off `@stops_per_target - 1`
     graph =
       scene.assigns.graph
-      |> modify_line_color_background(scene, route.route_color)
-      |> modify_line_name(scene, target)
-      |> modify_station_name(scene, stop)
-      |> modify_direction(scene, target)
-      |> modify_time_remaining(scene, arrival_time_remaining)
+      |> MtaSubwayTime.Scene.LineScheduleView.modify_view(
+           scene,
+           target,
+           arrivals,
+           0,
+           current_time_of_day_in_seconds,
+           :line_background_1,
+           :arrival_index_1,
+           :line_name_1,
+           :station_name_1,
+           :direction_1,
+           :time_remaining_1
+         )
+      |> MtaSubwayTime.Scene.LineScheduleView.modify_view(
+           scene,
+           target,
+           arrivals,
+           scene.assigns.secondary_stop_index + 1,
+           current_time_of_day_in_seconds,
+           :line_background_2,
+           :arrival_index_2,
+           :line_name_2,
+           :station_name_2,
+           :direction_2,
+           :time_remaining_2
+         )
 
     state =
       scene
@@ -126,98 +105,6 @@ defmodule MtaSubwayTime.Scene.Schedule do
       |> push_graph(graph)
 
     {:noreply, state}
-  end
-
-  defp modify_line_color_background(graph, scene, color) do
-    Graph.modify(
-      graph,
-      :line_background,
-      &circle(
-        &1,
-        100,
-        fill: {:color_rgb, {color.r, color.g, color.b}}
-      )
-    )
-  end
-
-  defp modify_line_name(graph, scene, target) do
-    Graph.modify(
-      graph,
-      :line_name,
-      &text(
-        &1,
-        "#{target.line}"
-      )
-    )
-  end
-
-  defp modify_station_name(graph, scene, stop) do
-    Graph.modify(
-      graph,
-      :station_name,
-      &text(
-        &1,
-        "#{stop.stop_name} (#{arrival_index_label(scene.assigns.stop_index)})"
-      )
-    )
-  end
-
-  defp modify_direction(graph, scene, target) do
-    Graph.modify(
-      graph,
-      :direction,
-      &text(
-        &1,
-        "To #{target.direction}"
-      )
-    )
-  end
-
-  defp modify_time_remaining(graph, scene, arrival_time_remaining) do
-    Graph.modify(
-      graph,
-      :time_remaining,
-      &text(
-        &1,
-        "#{arrival_time_remaining}"
-      )
-    )
-  end
-
-  defp seconds_until_arrival(arrival_time, now) when now < arrival_time do
-    arrival_time - now
-  end
-
-  defp seconds_until_arrival(arrival_time, now) do
-    (86_400 - now) + arrival_time
-  end
-
-  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 61 do
-    "#{seconds_until_arrival} seconds away"
-  end
-
-  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 91 do
-    "~1 minute away"
-  end
-
-  defp arrival_time_label(seconds_until_arrival) when seconds_until_arrival < 121 do
-    "~2 minutes away"
-  end
-
-  defp arrival_time_label(seconds_until_arrival) do
-    "#{round(seconds_until_arrival / 60)} minutes away"
-  end
-
-  defp arrival_index_label(index) when index == 0 do
-    "First Train"
-  end
-
-  defp arrival_index_label(index) when index == 1 do
-    "Second Train"
-  end
-
-  defp arrival_index_label(index) do
-    "Train #{index + 1}"
   end
 
   defp assign_current_or_next_target_index(scene, date) do
@@ -231,7 +118,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
         assign(
           scene,
           target_index: rem(scene.assigns.target_index + 1, scene.assigns.target_count),
-          stop_index: 0,
+#          secondary_stop_index: 0,
           last_target_change_seconds: DateTime.to_unix(date, :second),
           last_stop_change_seconds: DateTime.to_unix(date, :second)
         )
@@ -243,12 +130,12 @@ defmodule MtaSubwayTime.Scene.Schedule do
       DateTime.to_unix(date, :second) < scene.assigns.last_stop_change_seconds + @stops_refresh_rate_seconds ->
         assign(
           scene,
-          stop_index: scene.assigns.stop_index
+          secondary_stop_index: scene.assigns.secondary_stop_index
         )
       true ->
         assign(
           scene,
-          stop_index: rem(scene.assigns.stop_index + 1, @stops_per_target),
+          secondary_stop_index: rem(scene.assigns.secondary_stop_index + 1, @stops_per_target - 1),
           last_stop_change_seconds: DateTime.to_unix(date, :second)
         )
     end
