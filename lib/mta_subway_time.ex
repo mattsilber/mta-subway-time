@@ -23,4 +23,8 @@ defmodule MtaSubwayTime do
   def google_transit_data_directory do
     Application.get_env(:mta_subway_time, :google_transit_data)
   end
+
+  def transit_data_timezone do
+    Application.get_env(:mta_subway_time, :transit_data_timezone)
+  end
 end

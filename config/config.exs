@@ -21,6 +21,7 @@ config :mta_subway_time, :subway_lines, [
 
 config :mta_subway_time, gtfs_api_key: System.get_env("GTFS_API_KEY")
 config :mta_subway_time, google_transit_data: System.get_env("GOOGLE_TRANSIT_DATA")
+config :mta_subway_time, transit_data_timezone: System.get_env("TRANSIT_DATA_TIMEZONE")
 
 # The name of the network interface to check network status
 config :mta_subway_time, network_interface_name: "eth0"

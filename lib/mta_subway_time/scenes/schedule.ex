@@ -60,7 +60,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
   def handle_info(:refresh, scene) do
     target = Enum.at(MtaSubwayTime.subway_line_targets(), scene.assigns.target_index)
 
-    current_date = DateTime.utc_now
+    current_date = Timex.to_datetime(DateTime.utc_now, MtaSubwayTime.transit_data_timezone())
     current_time_of_day_in_seconds = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(current_date)
 
     arrivals = MtaSubwayTime.Networking.StopTimes.next_stop_times_after_date(target, current_date, @stops_per_target)

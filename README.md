@@ -71,3 +71,12 @@ To download the latest google transit data used to load the base schedules, run:
 ```sh
 ./scripts/update_google_transit_data.sh
 ```
+
+#### ENV
+
+Edit `.bashrc` in container or WSL instance and fill in values:
+```
+export GTFS_API_KEY=
+export GOOGLE_TRANSIT_DATA=
+export TRANSIT_DATA_TIMEZONE=America/New_York
+```
