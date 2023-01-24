@@ -38,27 +38,28 @@ defmodule MtaSubwayTime.Networking.StopTimes do
               |> Enum.to_list
               |> Enum.sort_by(& &1[:arrival_time])
 
-  def stop_times(stop_id, date) do
+  def stop_times(target, date) do
     # Include yesterday's, today's, and tomorrow's schedules with offsets
     # to sort rollovers
-    stop_times(stop_id, date, 2, 0)
+    stop_times(target, date, 2, 0)
     |> List.flatten
+    |> Enum.map(& adjusted_stop_time_with_feed_data(&1, MtaSubwayTime.Networking.Data.get(target)))
     |> Enum.sort_by(& &1[:arrival_time])
   end
 
-  defp stop_times(stop_id, date, count_indexed, 0) do
-    [stop_times(stop_id, date |> Timex.shift(days: -1), -86_400) | stop_times(stop_id, date, count_indexed, 1)]
+  defp stop_times(target, date, count_indexed, 0) do
+    [stop_times(target, date |> Timex.shift(days: -1), -86_400) | stop_times(target, date, count_indexed, 1)]
   end
 
-  defp stop_times(stop_id, date, count_indexed, index) when index < count_indexed do
-    [stop_times(stop_id, date |> Timex.shift(days: index - 1), 86_400 * (index - 1)) | stop_times(stop_id, date, count_indexed, index + 1)]
+  defp stop_times(target, date, count_indexed, index) when index < count_indexed do
+    [stop_times(target, date |> Timex.shift(days: index - 1), 86_400 * (index - 1)) | stop_times(target, date, count_indexed, index + 1)]
   end
 
-  defp stop_times(stop_id, date, count_indexed, index) do
-    [stop_times(stop_id, date |> Timex.shift(days: index - 1), 86_400 * (index - 1))]
+  defp stop_times(target, date, count_indexed, index) do
+    [stop_times(target, date |> Timex.shift(days: index - 1), 86_400 * (index - 1))]
   end
 
-  defp stop_times(stop_id, date, arrival_offset) do
+  defp stop_times(target, date, arrival_offset) do
     day_of_week_filter = case Date.day_of_week(date) do
       7 -> "Sunday"
       6 -> "Saturday"
@@ -66,23 +67,16 @@ defmodule MtaSubwayTime.Networking.StopTimes do
     end
 
     @stop_times
-    |> Enum.filter(& &1[:stop_id] == stop_id)
+    |> Enum.filter(& &1[:stop_id] == target.stop_id)
     |> Enum.filter(& String.contains?(&1[:trip_id], day_of_week_filter))
     |> Enum.map(& %{&1 | :arrival_time => &1[:arrival_time] + arrival_offset})
   end
 
-  def next_stop_time_after_date(target, date) do
-    current_seconds_in_day = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(date)
-    stop_times_for_id = stop_times(target.stop_id, date)
-
-    next_stop_time_after_second_in_day(target, stop_times_for_id, current_seconds_in_day)
-  end
-
-  defp next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day) do
+  def next_stop_time_after_second_in_day(target, stop_times_for_id, seconds_in_day) do
     # stop_times should return yesterday's, today's and tomorrow's schedule,
     # but need to account for the feed updates for a line, if they're available
     stop_times_for_id
-    |> Enum.map(& adjusted_stop_time_with_feed_data(&1, MtaSubwayTime.Networking.Data.get(target)))
+    |> Enum.sort_by(& &1[:arrival_time])
     |> Enum.find(& (seconds_in_day < &1[:arrival_time]))
   end
 
@@ -120,7 +114,11 @@ defmodule MtaSubwayTime.Networking.StopTimes do
 
   def next_stop_times_after_date(target, date, count) do
     current_seconds_in_day = MtaSubwayTime.Networking.TimeConverter.date_to_seconds_in_day(date)
-    stop_times_for_id = stop_times(target.stop_id, date)
+
+    stop_times_for_id = Enum.filter(
+      stop_times(target, date),
+      & (current_seconds_in_day < &1[:arrival_time])
+    )
 
     next_stop_times_after_seconds_in_day(target, stop_times_for_id, current_seconds_in_day, count - 1, 0)
   end
