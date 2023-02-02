@@ -1,4 +1,4 @@
-IMAGE_NAME := elixir-nerves-mtast
+IMAGE_NAME := mta-subway-time
 
 docker-build:
 	docker build -t $(IMAGE_NAME) .

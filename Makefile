@@ -1,13 +1,10 @@
 include default.mk
 
-windows-docker-build:
-	make -f makefile.win docker-build
-
 windows-docker-run:
-	make -f makefile.win docker-run
+	make -f Makefile.win docker-run
 
-nix-docker-build:
-	make -f makefile.nix docker-build
+windows-docker-run-with-x:
+	make -f Makefile.win docker-run-with-x
 
 nix-docker-run:
-	make -f makefile.nix docker-run
+	make -f Makefile.nix docker-run

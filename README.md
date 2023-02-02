@@ -1,68 +1,20 @@
 # MtaSubwayTime
 
-**TODO: Add description**
+## Windows Docker Setup
 
-## Targets
+Launch XLaunch instance:
+[XLaunch](https://x.cygwin.com/docs/xlaunch/index.html)
 
-Nerves applications produce images for hardware targets based on the
-`MIX_TARGET` environment variable. If `MIX_TARGET` is unset, `mix` builds an
-image that runs on the host (e.g., your laptop). This is useful for executing
-logic tests, running utilities, and debugging. Other targets are represented by
-a short name like `rpi3` that maps to a Nerves system image for that platform.
-All of this logic is in the generated `mix.exs` and may be customized. For more
-information about targets see:
-
-https://hexdocs.pm/nerves/targets.html#content
-
-## Getting Started
-
-To start your Nerves app:
-  * `export MIX_TARGET=my_target` or prefix every command with
-    `MIX_TARGET=my_target`. For example, `MIX_TARGET=rpi3`
-  * Install dependencies with `mix deps.get`
-  * Create firmware with `mix firmware`
-  * Burn to an SD card with `mix burn`
-
-## Learn more
-
-  * Official docs: https://hexdocs.pm/nerves/getting-started.html
-  * Official website: https://nerves-project.org/
-  * Forum: https://elixirforum.com/c/nerves-forum
-  * Discussion Slack elixir-lang #nerves ([Invite](https://elixir-slackin.herokuapp.com/))
-  * Source: https://github.com/nerves-project/nerves
-
-
-## Windows setup
-
-Follow these [instructions](https://medium.com/@jeffborch/running-the-scenic-elixir-gui-framework-on-windows-10-using-wsl-f9c01fd276f6) for setting up a WSL instance.
-
-Inside the created WSL instance, run `./scripts/wsl_setup.sh` to install everything required to build this project and run with Windows as the GUI host.
-
-WSL won't have permissions to write to the directory, so just adjust the deps and build paths to somewhere mix does have access to, e.g.:
-
-```sh
-MIX_BUILD_PATH=~/build \
-  MIX_DEPS_PATH=~/deps \
-  MIX_TARGET=host \
-  mix run --no-halt
-```
-
-## Mac Setup
+## Mac Docker Setup
 
 ```
 brew install glew
 brew install glfw
 ```
 
-### Docker Setup
-
 Launch Quartz instance:
-Original instructions: https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
-Quartz: https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
+[Quartz](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285), with [original instructions](https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285)
 
-```
-xhost + ${hostname}
-```
 
 ## Google Transit Data
 
@@ -72,11 +24,41 @@ To download the latest google transit data used to load the base schedules, run:
 ./scripts/update_google_transit_data.sh
 ```
 
-#### ENV
+## Docker
+
+### Docker Build
+
+```
+make docker-build
+```
+
+### Run on Windows
+
+```
+make windows-docker-run-with-x
+```
+
+### Run on Mac
+
+```
+make nix-docker-run
+```
+
+## ENV
 
 Edit `.bashrc` in container or WSL instance and fill in values:
 ```
 export GTFS_API_KEY=
 export GOOGLE_TRANSIT_DATA=
 export TRANSIT_DATA_TIMEZONE=America/New_York
+export AUTHORIZED_SSH_KEY=
+```
+
+## Running Locally
+
+```sh
+MIX_BUILD_PATH=~/build \
+  MIX_DEPS_PATH=~/deps \
+  MIX_TARGET=host \
+  mix run --no-halt
 ```

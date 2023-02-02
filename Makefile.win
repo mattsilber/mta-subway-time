@@ -12,7 +12,7 @@ docker-run:
 
 docker-run-with-x:
 	docker run --rm -it \
-	    -e DISPLAY=$(DISPLAY) \
+	    -e DISPLAY=$(DISPLAY):0.0 \
 	    -v $(MAKEFILE_DIR):/workspace \
 	    -v $(HOME):/tmp/.X11-unix \
 	    -w /workspace \

@@ -38,8 +38,7 @@ config :nerves, source_date_epoch: "1668866892"
 
 config :nerves_time, await_initialization_timeout: :timer.seconds(5)
 
-config :scenic, :assets,
-       module: MtaSubwayTime.Scene.Assets
+config :scenic, :assets, module: MtaSubwayTime.Assets
 
 if Mix.target() == :host do
   import_config "host.exs"

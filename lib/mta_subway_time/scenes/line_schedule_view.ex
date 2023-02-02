@@ -24,7 +24,6 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
          font_size: 38,
          translate: {40 + offset_x, 48 + offset_y},
          fill: {:color_rgb, @content_text_color},
-         font: :roboto,
          id: line_id
        )
     |> text(
@@ -32,7 +31,6 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
          font_size: 22,
          translate: {6 + offset_x, 48 + offset_y},
          fill: {:color_rgb, @content_text_color},
-         font: :roboto,
          id: index_id
        )
     |> text(
@@ -40,7 +38,6 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
          font_size: 12,
          translate: {@content_x_offset + offset_x, 22 + offset_y},
          fill: {:color_rgb, @content_text_color},
-         font: :roboto,
          id: station_and_direction_id
        )
     |> text(
@@ -48,7 +45,6 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
          font_size: 32,
          translate: {@content_x_offset + offset_x, 52 + offset_y},
          fill: {:color_rgb, @content_text_color},
-         font: :roboto,
          id: time_remaining_id
        )
   end

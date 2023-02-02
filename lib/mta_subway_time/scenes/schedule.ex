@@ -13,7 +13,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   @targets_refresh_rate_seconds 20
 
-  @graph Graph.build()
+  @graph Graph.build(font: :roboto)
          |> rectangle(
               {400, 70},
               fill: {:color_rgb, {52, 73, 94}}

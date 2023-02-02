@@ -51,6 +51,7 @@ RUN apt-get update \
 WORKDIR /workspace
 
 ENV GOOGLE_TRANSIT_DATA=/workspace/google_transit
+ENV TRANSIT_DATA_TIMEZONE=America/New_York
 
 COPY ./scripts /mta-scripts
 
@@ -68,8 +69,7 @@ RUN wget https://github.com/fwup-home/fwup/releases/download/v${FWUP_VERSION}/fw
 # From https://github.com/asdf-community/asdf-ubuntu/blob/master/Dockerfile
 RUN adduser --shell /bin/bash --home /asdf --disabled-password asdf
 RUN adduser asdf sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> \
-/etc/sudoers
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 ENV PATH="${PATH}:/asdf/.asdf/shims:/asdf/.asdf/bin"
 
 USER asdf
@@ -102,5 +102,8 @@ RUN ssh-keygen -q -t rsa -N '' -f $HOME/.ssh/id_rsa
 ENV PATH=$HOME/.mix/escripts:$PATH
 
 RUN mix escript.install hex protobuf --force
+
+ENV MIX_BUILD_PATH=/asdf/mix/build
+ENV MIX_DEPS_PATH=/asdf/mix/deps
 
 CMD ["/bin/bash"]
