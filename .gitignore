@@ -22,3 +22,6 @@ erl_crash.dump
 
 # Google Transit data from scripts/update_google_transit_data.sh
 google_transit/
+
+# Built firmware
+*.fw

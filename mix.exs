@@ -52,7 +52,7 @@ defmodule MtaSubwayTime.MixProject do
       # version updates, please review their release notes in case
       # changes to your application are needed.
       {:nerves_system_rpi, "~> 1.21", runtime: false, targets: :rpi},
-      {:nerves_system_rpi0, "~> 1.21", runtime: false, targets: :rpi0},
+      {:nerves_system_rpi0, "~> 1.21", runtime: true, targets: :rpi0},
       {:nerves_system_rpi2, "~> 1.21", runtime: false, targets: :rpi2},
       {:nerves_system_rpi3, "~> 1.21", runtime: false, targets: :rpi3},
       {:nerves_system_rpi3a, "~> 1.21", runtime: false, targets: :rpi3a},
@@ -64,7 +64,7 @@ defmodule MtaSubwayTime.MixProject do
 
       # Scenic for displaying train schedules
       {:scenic, "~> 0.11"},
-      {:scenic_driver_local, "~> 0.11", targets: :host},
+      {:scenic_driver_local, "~> 0.11"},
 
       # Httpoison for networking
       {:httpoison, "~> 1.8"},
@@ -81,6 +81,13 @@ defmodule MtaSubwayTime.MixProject do
 
       # Parsing RGB values....
       {:chameleon, "~> 2.2.0"},
+
+      # VintageNet for connecting to network
+      {:vintage_net_wifi, "~> 0.11.3", targets: @all_targets},
+
+      # Upload the firmware using SSH / FWUP
+      {:nerves_ssh,"~> 0.4.1", targets: @all_targets},
+      {:ssh_subsystem_fwup,"~> 0.6.1", targets: @all_targets},
     ]
   end
 

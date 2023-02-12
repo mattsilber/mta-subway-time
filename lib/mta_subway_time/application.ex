@@ -34,13 +34,10 @@ defmodule MtaSubwayTime.Application do
   end
 
   def children(_target) do
-    main_viewport_config = Application.get_env(:mta_subway_time, :viewport)
-
     [
       # Children for all targets except host
       # Starts a worker by calling: MtaSubwayTime.Worker.start_link(arg)
-      # {MtaSubwayTime.Worker, arg},
-      {Scenic, viewports: [main_viewport_config]}
+      # {MtaSubwayTime.Worker, arg}
     ]
   end
 

@@ -10,7 +10,7 @@ config :logger, backends: [RingLogger]
 # library documentation for more control in ordering how OTP
 # applications are started and handling failures.
 
-config :shoehorn, init: [:nerves_runtime, :nerves_pack]
+config :shoehorn, init: [:nerves_runtime, :nerves_pack, :nerves_ssh]
 
 # Erlinit can be configured without a rootfs_overlay. See
 # https://github.com/nerves-project/erlinit/ for more information on
@@ -25,9 +25,15 @@ config :nerves,
 #
 # * See https://hexdocs.pm/nerves_ssh/readme.html for general SSH configuration
 # * See https://hexdocs.pm/ssh_subsystem_fwup/readme.html for firmware updates
+#
+#config :nerves_ssh,
+#  authorized_keys: [ System.get_env("AUTHORIZED_SSH_KEY") ]
 
+#
 config :nerves_ssh,
-  authorized_keys: [ System.get_env("AUTHORIZED_SSH_KEY") ]
+  user_passwords: [
+    {"admin", "password"}
+  ]
 
 # Configure the network using vintage_net
 # See https://github.com/nerves-networking/vintage_net for more information
@@ -40,7 +46,21 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-    {"wlan0", %{type: VintageNetWiFi}}
+    {"wlan0",
+      %{
+        type: VintageNetWiFi,
+        vintage_net_wifi: %{
+          networks: [
+            %{
+              key_mgmt: :wpa_psk,
+              ssid: System.get_env("WIFI_SSID"),
+              psk: System.get_env("WIFI_PASS_OR_PSK"),
+            }
+          ]
+        },
+        ipv4: %{method: :dhcp},
+      }
+    }
   ]
 
 config :mdns_lite,

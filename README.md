@@ -46,12 +46,12 @@ make nix-docker-run
 
 ## ENV
 
-Edit `.bashrc` in container or WSL instance and fill in values:
 ```
 export GTFS_API_KEY=
 export GOOGLE_TRANSIT_DATA=
 export TRANSIT_DATA_TIMEZONE=America/New_York
-export AUTHORIZED_SSH_KEY=
+export WIFI_SSID=
+export WIFI_PASS_OR_PSK=
 ```
 
 ## Running Locally
