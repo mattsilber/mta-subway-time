@@ -6,44 +6,46 @@ defmodule MtaSubwayTime.Scene.LineScheduleView do
   import Scenic.Primitives
   import Scenic.Components
 
-  @circle_background_radius 22
+  @circle_background_radius 52
 
-  @content_x_offset 80
+  @content_x_offset 175
   @content_text_color {236, 240, 241}
+
+  @line_letter_font_size 72
 
   def create_view(graph, line_background_id, index_id, line_id, station_and_direction_id, time_remaining_id, {offset_x, offset_y}) do
     graph
     |> circle(
          @circle_background_radius,
          fill: {:color_rgb, {52, 73, 94}},
-         translate: {50 + offset_x, 34 + offset_y},
+         translate: {108 + offset_x, 25 + offset_y},
          id: line_background_id
        )
     |> text(
          "Loading...",
-         font_size: 38,
-         translate: {40 + offset_x, 48 + offset_y},
+         font_size: @line_letter_font_size,
+         translate: {90 + offset_x, 48 + offset_y},
          fill: {:color_rgb, @content_text_color},
          id: line_id
        )
     |> text(
          "",
-         font_size: 22,
-         translate: {6 + offset_x, 48 + offset_y},
+         font_size: @line_letter_font_size * 0.625,
+         translate: {10 + offset_x, 48 + offset_y},
          fill: {:color_rgb, @content_text_color},
          id: index_id
        )
     |> text(
          "",
-         font_size: 12,
-         translate: {@content_x_offset + offset_x, 22 + offset_y},
+         font_size: @line_letter_font_size * 0.425,
+         translate: {@content_x_offset + offset_x, 4 + offset_y},
          fill: {:color_rgb, @content_text_color},
          id: station_and_direction_id
        )
     |> text(
          "",
-         font_size: 32,
-         translate: {@content_x_offset + offset_x, 52 + offset_y},
+         font_size: @line_letter_font_size * 1.025,
+         translate: {@content_x_offset + offset_x, 70 + offset_y},
          fill: {:color_rgb, @content_text_color},
          id: time_remaining_id
        )

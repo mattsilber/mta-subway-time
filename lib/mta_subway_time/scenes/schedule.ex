@@ -15,7 +15,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
 
   @graph Graph.build(font: :roboto)
          |> rectangle(
-              {400, 70},
+              {800, 240},
               fill: {:color_rgb, {52, 73, 94}}
             )
          |> MtaSubwayTime.Scene.LineScheduleView.create_view(
@@ -24,7 +24,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
               :line_name_1,
               :station_and_direction_1,
               :time_remaining_1,
-              {0, 0}
+              {0, 80}
             )
          |> MtaSubwayTime.Scene.LineScheduleView.create_view(
               :line_background_2,
@@ -32,7 +32,7 @@ defmodule MtaSubwayTime.Scene.Schedule do
               :line_name_2,
               :station_and_direction_2,
               :time_remaining_2,
-              {0, 72}
+              {0, 322}
             )
 
   def init(scene, _params, _options) do
