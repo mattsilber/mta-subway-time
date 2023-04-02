@@ -1,4 +1,6 @@
-# MtaSubwayTime
+# mta-subway-time
+
+![meta-subway-time Sample](./screenshot.png)
 
 ## Windows Docker Setup
 
@@ -54,6 +56,23 @@ export WIFI_SSID=
 export WIFI_PASS_OR_PSK=
 ```
 
+## Targets
+
+Configure the stop(s) you want to target by opening `config/config.exs` and editing the `subway_lines` declaration
+
+```elixir
+config :mta_subway_time, :subway_lines, [
+  %{
+    line: "F",
+    stop_id: "F24N",
+    direction: "Manhatten",
+  },
+]
+```
+
+The `stop_id` is found inside the Google Transit Data's `stops.txt` file. 
+The `line` and `direction` parameters are simply for display.
+
 ## Running Locally
 
 ```sh
@@ -62,3 +81,7 @@ MIX_BUILD_PATH=~/build \
   MIX_TARGET=host \
   mix run --no-halt
 ```
+
+## TODO
+* BOM
+* Model the casing unit
